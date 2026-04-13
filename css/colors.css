@@ -1,0 +1,64 @@
+/* ============================================
+   COLORS.CSS - Color Palette
+   ============================================ */
+
+:root {
+    /* Primary Colors */
+    --clr-primary: #E63946;
+    --clr-primary-light: #FF6B6B;
+    --clr-primary-dark: #C1121F;
+
+    /* Secondary Colors */
+    --clr-secondary: #6C63FF;
+    --clr-secondary-light: #8B83FF;
+    --clr-secondary-dark: #4A42D4;
+
+    /* Accent Colors */
+    --clr-accent: #00B4D8;
+    --clr-accent-light: #48CAE4;
+    --clr-accent-dark: #0096C7;
+
+    /* Neutral Colors */
+    --clr-white: #FFFFFF;
+    --clr-off-white: #F8F9FA;
+    --clr-light-gray: #E9ECEF;
+    --clr-gray: #6C757D;
+    --clr-dark-gray: #495057;
+    --clr-charcoal: #343A40;
+    --clr-dark: #212529;
+    --clr-black: #000000;
+
+    /* Background Colors */
+    --clr-bg-primary: #FFFFFF;
+    --clr-bg-secondary: #F8F9FA;
+    --clr-bg-dark: #1A1A2E;
+    --clr-bg-darker: #0F0F1A;
+    --clr-bg-card: #FFFFFF;
+    --clr-bg-hero: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 50%, #16213E 100%);
+
+    /* Text Colors */
+    --clr-text-primary: #212529;
+    --clr-text-secondary: #6C757D;
+    --clr-text-muted: #ADB5BD;
+    --clr-text-light: #DEE2E6;
+    --clr-text-white: #FFFFFF;
+
+    /* Border Colors */
+    --clr-border: #DEE2E6;
+    --clr-border-light: #E9ECEF;
+    --clr-border-dark: #495057;
+
+    /* Status Colors */
+    --clr-success: #28A745;
+    --clr-warning: #FFC107;
+    --clr-danger: #DC3545;
+    --clr-info: #17A2B8;
+
+    /* Gradient Definitions */
+    --gradient-primary: linear-gradient(135deg, #E63946 0%, #FF6B6B 100%);
+    --gradient-secondary: linear-gradient(135deg, #6C63FF 0%, #8B83FF 100%);
+    --gradient-dark: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 100%);
+    --gradient-hero: linear-gradient(180deg, rgba(15, 15, 26, 0.95) 0%, rgba(26, 26, 46, 0.9) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    --gradient-purple: linear-gradient(135deg, #6C63FF 0%, #00B4D8 100%);
+}

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Starter - Creative Digital Agency. We craft stunning digital experiences through design, development, and strategy.">
+  <meta name="keywords" content="digital agency, web design, development, creative, portfolio">
+  <meta name="author" content="Starter Agency">
+  <title>Starter - Creative Digital Agency</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+
+  <!-- ============================================
+       PRELOADER
+       ============================================ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-main fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        Starter<span>.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-nav">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>#1 Digital Agency</span>
+            </div>
+            <h1 class="hero-title">
+              We Craft <span class="highlight">Digital</span> Experiences That <span class="highlight">Matter</span>
+            </h1>
+            <p class="hero-description">
+              We are a creative digital agency helping brands grow through innovative design, cutting-edge development, and strategic marketing solutions.
+            </p>
+            <div class="hero-buttons">
+              <a href="#portfolio" class="btn-primary-custom">
+                <span>View Our Work</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn-outline-custom">
+                <i class="bi bi-play-circle"></i>
+                <span>Watch Demo</span>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <h3><span class="counter-number" data-target="250">0</span><span>+</span></h3>
+                <p>Projects Done</p>
+              </div>
+              <div class="hero-stat">
+                <h3><span class="counter-number" data-target="120">0</span><span>+</span></h3>
+                <p>Happy Clients</p>
+              </div>
+              <div class="hero-stat">
+                <h3><span class="counter-number" data-target="15">0</span><span>+</span></h3>
+                <p>Years Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop" alt="Team working together" class="img-fluid" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl);">
+            <!-- Floating Cards -->
+            <div class="hero-floating-card card-1">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-star-fill text-warning"></i>
+                <span style="color: var(--clr-text-white); font-weight: 600; font-size: 0.9rem;">4.9 Rating</span>
+              </div>
+            </div>
+            <div class="hero-floating-card card-2">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-people-fill" style="color: var(--clr-accent);"></i>
+                <span style="color: var(--clr-text-white); font-weight: 600; font-size: 0.9rem;">500+ Users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CLIENT LOGOS SLIDER
+       ============================================ -->
+  <section class="section-light clients-section py-4" id="clients">
+    <div class="container-fluid">
+      <div class="logo-slider">
+        <div class="logo-slider-track">
+          <!-- duplicated for infinite scroll -->
+          <div class="client-logo"><i class="bi bi-microsoft"></i></div>
+          <div class="client-logo"><i class="bi bi-google"></i></div>
+          <div class="client-logo"><i class="bi bi-apple"></i></div>
+          <div class="client-logo"><i class="bi bi-meta"></i></div>
+          <div class="client-logo"><i class="bi bi-spotify"></i></div>
+          <div class="client-logo"><i class="bi bi-slack"></i></div>
+          <div class="client-logo"><i class="bi bi-nvidia"></i></div>
+          <div class="client-logo"><i class="bi bi-paypal"></i></div>
+          <div class="client-logo"><i class="bi bi-dropbox"></i></div>
+          <div class="client-logo"><i class="bi bi-github"></i></div>
+          <div class="client-logo"><i class="bi bi-youtube"></i></div>
+          <div class="client-logo"><i class="bi bi-twitter-x"></i></div>
+          <!-- Duplicate set for seamless scrolling -->
+          <div class="client-logo"><i class="bi bi-microsoft"></i></div>
+          <div class="client-logo"><i class="bi bi-google"></i></div>
+          <div class="client-logo"><i class="bi bi-apple"></i></div>
+          <div class="client-logo"><i class="bi bi-meta"></i></div>
+          <div class="client-logo"><i class="bi bi-spotify"></i></div>
+          <div class="client-logo"><i class="bi bi-slack"></i></div>
+          <div class="client-logo"><i class="bi bi-nvidia"></i></div>
+          <div class="client-logo"><i class="bi bi-paypal"></i></div>
+          <div class="client-logo"><i class="bi bi-dropbox"></i></div>
+          <div class="client-logo"><i class="bi bi-github"></i></div>
+          <div class="client-logo"><i class="bi bi-youtube"></i></div>
+          <div class="client-logo"><i class="bi bi-twitter-x"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICES / FEATURES SECTION
+       ============================================ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">We provide comprehensive digital solutions to help your business thrive in today's competitive landscape.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll">
+            <div class="feature-icon icon-red">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h5>UI/UX Design</h5>
+            <p>Creating intuitive and beautiful user interfaces that delight users and drive engagement across all platforms.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll delay-1">
+            <div class="feature-icon icon-blue">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h5>Web Development</h5>
+            <p>Building fast, scalable, and secure web applications using the latest technologies and best practices.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll delay-2">
+            <div class="feature-icon icon-purple">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5>Mobile Apps</h5>
+            <p>Native and cross-platform mobile applications that provide seamless experiences on iOS and Android.</p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll delay-3">
+            <div class="feature-icon icon-green">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h5>SEO & Marketing</h5>
+            <p>Data-driven marketing strategies that increase visibility, traffic, and conversions for your business.</p>
+          </div>
+        </div>
+        <!-- Service 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll delay-4">
+            <div class="feature-icon icon-orange">
+              <i class="bi bi-megaphone"></i>
+            </div>
+            <h5>Brand Strategy</h5>
+            <p>Comprehensive branding solutions that define your identity and resonate with your target audience.</p>
+          </div>
+        </div>
+        <!-- Service 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card animate-on-scroll delay-5">
+            <div class="feature-icon icon-teal">
+              <i class="bi bi-cloud-arrow-up"></i>
+            </div>
+            <h5>Cloud Solutions</h5>
+            <p>Reliable cloud infrastructure and DevOps services for optimal performance and scalability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT SECTION
+       ============================================ -->
+  <section class="section section-light about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="about-image-wrapper animate-left">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" alt="Team collaboration" class="img-fluid">
+            <div class="about-badge">
+              <h3>15</h3>
+              <p>Years of<br>Experience</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="animate-right">
+            <span class="section-tag">About Us</span>
+            <h2 class="section-title">We're a Team of Innovative Digital Creators</h2>
+            <p style="color: var(--clr-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+              Since 2009, we've been pushing the boundaries of digital design and development. Our team of passionate creators, strategists, and developers work together to deliver exceptional digital products that drive real results.
+            </p>
+            <p style="color: var(--clr-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+              We believe in the power of thoughtful design and clean code to solve complex problems and create meaningful connections between brands and their audiences.
+            </p>
+            <ul class="about-list">
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Award-winning design team with 50+ industry recognitions</span>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Full-stack development expertise across modern frameworks</span>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Data-driven approach with measurable results and ROI</span>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <span>24/7 dedicated support and maintenance</span>
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary-custom mt-4">
+              <span>Learn More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       STATS / COUNTER SECTION
+       ============================================ -->
+  <section class="section stats-section section-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item animate-on-scroll">
+            <h3><span class="counter-number" data-target="250">0</span><span>+</span></h3>
+            <p>Projects Completed</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item animate-on-scroll delay-1">
+            <h3><span class="counter-number" data-target="120">0</span><span>+</span></h3>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item animate-on-scroll delay-2">
+            <h3><span class="counter-number" data-target="35">0</span><span>+</span></h3>
+            <p>Team Members</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item animate-on-scroll delay-3">
+            <h3><span class="counter-number" data-target="18">0</span><span>+</span></h3>
+            <p>Awards Won</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW WE WORK / PROCESS
+       ============================================ -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Process</span>
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-subtitle">Our proven four-step process ensures each project is delivered with precision, quality, and on time.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step animate-on-scroll">
+            <div class="process-step-number">01</div>
+            <h5>Discovery</h5>
+            <p>Understanding your goals, audience, and market through research and analysis.</p>
+            <div class="process-connector d-none d-lg-block"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step animate-on-scroll delay-1">
+            <div class="process-step-number">02</div>
+            <h5>Strategy</h5>
+            <p>Creating a tailored roadmap and strategy aligned with your business objectives.</p>
+            <div class="process-connector d-none d-lg-block"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step animate-on-scroll delay-2">
+            <div class="process-step-number">03</div>
+            <h5>Design & Build</h5>
+            <p>Crafting pixel-perfect designs and developing robust, scalable solutions.</p>
+            <div class="process-connector d-none d-lg-block"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="process-step animate-on-scroll delay-3">
+            <div class="process-step-number">04</div>
+            <h5>Launch & Grow</h5>
+            <p>Deploying the solution and providing ongoing support for continued growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PORTFOLIO SECTION
+       ============================================ -->
+  <section class="section section-light" id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Explore our latest work spanning across web design, mobile apps, branding, and more.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Filter -->
+      <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="development">Development</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="design">
+          <div class="portfolio-item animate-scale">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=350&fit=crop" alt="Dashboard Design" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>Dashboard Design</h5>
+              <p>UI/UX Design</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="development">
+          <div class="portfolio-item animate-scale delay-1">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=350&fit=crop" alt="E-Commerce Platform" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>E-Commerce Platform</h5>
+              <p>Web Development</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="branding">
+          <div class="portfolio-item animate-scale delay-2">
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=500&h=350&fit=crop" alt="Brand Identity" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>Brand Identity</h5>
+              <p>Branding</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="marketing">
+          <div class="portfolio-item animate-scale delay-3">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop" alt="Marketing Campaign" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>Marketing Campaign</h5>
+              <p>Digital Marketing</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="design">
+          <div class="portfolio-item animate-scale delay-4">
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=350&fit=crop" alt="Mobile App Design" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>Mobile App Design</h5>
+              <p>UI/UX Design</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-grid-item" data-category="development">
+          <div class="portfolio-item animate-scale delay-5">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&h=350&fit=crop" alt="SaaS Platform" loading="lazy">
+            <div class="portfolio-overlay">
+              <a href="#" class="portfolio-link"><i class="bi bi-arrow-up-right"></i></a>
+              <h5>SaaS Platform</h5>
+              <p>Full Stack Development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TEAM SECTION
+       ============================================ -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Team</span>
+        <h2 class="section-title">Meet the Experts</h2>
+        <p class="section-subtitle">Our talented team of designers, developers, and strategists who make amazing things happen.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card animate-on-scroll">
+            <div class="team-card-img">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Morgan" loading="lazy">
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-dribbble"></i></a>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <h5>Alex Morgan</h5>
+              <p>CEO & Founder</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card animate-on-scroll delay-1">
+            <div class="team-card-img">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face" alt="Sarah Chen" loading="lazy">
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-behance"></i></a>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <h5>Sarah Chen</h5>
+              <p>Lead Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card animate-on-scroll delay-2">
+            <div class="team-card-img">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face" alt="David Park" loading="lazy">
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <h5>David Park</h5>
+              <p>Tech Lead</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="team-card animate-on-scroll delay-3">
+            <div class="team-card-img">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" alt="Emma Wilson" loading="lazy">
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-card-body">
+              <h5>Emma Wilson</h5>
+              <p>Marketing Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS
+       ============================================ -->
+  <section class="section testimonial-section section-dark" id="testimonials">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="text-center">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title" style="color: var(--clr-text-white);">What Our Clients Say</h2>
+        <p class="section-subtitle">Don't just take our word for it. Here's what our clients have to say about working with us.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card animate-on-scroll">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>"Starter transformed our online presence completely. Their team delivered a stunning website that exceeded our expectations and drove a 200% increase in conversions."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="John Smith">
+              <div>
+                <h6>John Smith</h6>
+                <span>CEO, TechVentures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card animate-on-scroll delay-1">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>"Working with Starter was a fantastic experience. They took the time to understand our brand and delivered a mobile app that our users absolutely love."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Lisa Anderson">
+              <div>
+                <h6>Lisa Anderson</h6>
+                <span>COO, GreenLeaf</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card animate-on-scroll delay-2">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <p>"The team at Starter is incredible. Their attention to detail and strategic approach helped us rebrand and relaunch with amazing results. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face" alt="Michael Brown">
+              <div>
+                <h6>Michael Brown</h6>
+                <span>Founder, StartupXYZ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRICING SECTION
+       ============================================ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Simple & Transparent Pricing</h2>
+        <p class="section-subtitle">Choose the plan that fits your needs. No hidden fees, no surprises. Upgrade or downgrade anytime.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <!-- Starter Plan -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card animate-on-scroll">
+            <h4>Starter</h4>
+            <p class="pricing-desc">Perfect for small businesses and startups getting started.</p>
+            <div class="price">
+              <sup>$</sup>29<sub>/mo</sub>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill"></i> 5 Projects</li>
+              <li><i class="bi bi-check-circle-fill"></i> 10GB Storage</li>
+              <li><i class="bi bi-check-circle-fill"></i> Basic Analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i> Email Support</li>
+              <li class="disabled"><i class="bi bi-x-circle"></i> Custom Domain</li>
+              <li class="disabled"><i class="bi bi-x-circle"></i> Priority Support</li>
+            </ul>
+            <a href="#contact" class="btn-pricing">Get Started</a>
+          </div>
+        </div>
+        <!-- Professional Plan -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card featured animate-on-scroll delay-1">
+            <h4>Professional</h4>
+            <p class="pricing-desc">Best for growing businesses that need more power and features.</p>
+            <div class="price">
+              <sup>$</sup>79<sub>/mo</sub>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill"></i> Unlimited Projects</li>
+              <li><i class="bi bi-check-circle-fill"></i> 100GB Storage</li>
+              <li><i class="bi bi-check-circle-fill"></i> Advanced Analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i> Priority Support</li>
+              <li><i class="bi bi-check-circle-fill"></i> Custom Domain</li>
+              <li class="disabled"><i class="bi bi-x-circle"></i> White Label</li>
+            </ul>
+            <a href="#contact" class="btn-pricing">Get Started</a>
+          </div>
+        </div>
+        <!-- Enterprise Plan -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-card animate-on-scroll delay-2">
+            <h4>Enterprise</h4>
+            <p class="pricing-desc">For large organizations with advanced needs and custom requirements.</p>
+            <div class="price">
+              <sup>$</sup>149<sub>/mo</sub>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill"></i> Unlimited Everything</li>
+              <li><i class="bi bi-check-circle-fill"></i> 1TB Storage</li>
+              <li><i class="bi bi-check-circle-fill"></i> Custom Analytics</li>
+              <li><i class="bi bi-check-circle-fill"></i> 24/7 Phone Support</li>
+              <li><i class="bi bi-check-circle-fill"></i> Custom Domain</li>
+              <li><i class="bi bi-check-circle-fill"></i> White Label</li>
+            </ul>
+            <a href="#contact" class="btn-pricing">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG SECTION
+       ============================================ -->
+  <section class="section section-light" id="blog">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Blog</span>
+        <h2 class="section-title">Latest Articles & News</h2>
+        <p class="section-subtitle">Stay updated with the latest trends, insights, and tips from our team of experts.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card animate-on-scroll">
+            <div class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=300&fit=crop" alt="Design Trends 2024" loading="lazy">
+              <span class="blog-card-tag">Design</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="bi bi-calendar3"></i> Mar 2, 2026</span>
+                <span><i class="bi bi-clock"></i> 5 min read</span>
+              </div>
+              <h5>10 UI/UX Design Trends That Will Dominate 2026</h5>
+              <p>Explore the latest design trends that are shaping the digital landscape and learn how to apply them...</p>
+              <a href="#" class="blog-read-more">
+                Read More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card animate-on-scroll delay-1">
+            <div class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=500&h=300&fit=crop" alt="Web Development" loading="lazy">
+              <span class="blog-card-tag">Development</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="bi bi-calendar3"></i> Feb 28, 2026</span>
+                <span><i class="bi bi-clock"></i> 8 min read</span>
+              </div>
+              <h5>How to Build Scalable Web Apps with Modern Frameworks</h5>
+              <p>A comprehensive guide to choosing the right framework and architecture for your next project...</p>
+              <a href="#" class="blog-read-more">
+                Read More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card animate-on-scroll delay-2">
+            <div class="blog-card-img">
+              <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=500&h=300&fit=crop" alt="Marketing Strategy" loading="lazy">
+              <span class="blog-card-tag">Marketing</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="bi bi-calendar3"></i> Feb 25, 2026</span>
+                <span><i class="bi bi-clock"></i> 6 min read</span>
+              </div>
+              <h5>The Ultimate Guide to Digital Marketing in 2026</h5>
+              <p>Master the art of digital marketing with strategies that actually work in today's competitive landscape...</p>
+              <a href="#" class="blog-read-more">
+                Read More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="section cta-section text-center">
+    <div class="container position-relative" style="z-index: 2;">
+      <h2 class="animate-on-scroll">Ready to Start Your Next Project?</h2>
+      <p class="animate-on-scroll delay-1">Let's work together to create something extraordinary. Get in touch with us today and let's bring your ideas to life.</p>
+      <a href="#contact" class="btn-cta animate-on-scroll delay-2">
+        <span>Let's Talk</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT SECTION
+       ============================================ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Contact Us</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project in mind? Let's discuss how we can help bring your vision to reality.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="animate-left">
+            <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 1.5rem;">Let's talk about your project</h4>
+            <p style="color: var(--clr-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+              Fill out the form and our team will get back to you within 24 hours. We'd love to hear about your project.
+            </p>
+            <!-- Contact Cards -->
+            <div class="contact-info-card">
+              <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h6>Our Office</h6>
+                <p>123 Business Avenue, Suite 500<br>San Francisco, CA 94107</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h6>Email Us</h6>
+                <p>hello@starter.agency<br>support@starter.agency</p>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h6>Call Us</h6>
+                <p>+1 (555) 123-4567<br>Mon - Fri, 9am - 6pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="animate-right">
+            <form id="contactForm" class="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control">
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="development">Web Development</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="branding">Branding</option>
+                    <option value="marketing">Digital Marketing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-submit">
+                    <i class="bi bi-send"></i>
+                    <span>Send Message</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="#home">Starter<span>.</span></a>
+          <p class="footer-desc">We craft exceptional digital experiences that connect brands with their audiences. Let's build something amazing together.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <h6>Services</h6>
+          <ul class="footer-links">
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+            <li><a href="#">SEO & Marketing</a></li>
+            <li><a href="#">Brand Strategy</a></li>
+            <li><a href="#">Cloud Solutions</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-4 col-md-6">
+          <h6>Stay Updated</h6>
+          <div class="footer-newsletter">
+            <p>Subscribe to our newsletter for the latest updates, news, and offers.</p>
+            <form>
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your email">
+                <button type="submit" class="btn-subscribe">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p>&copy; 2026 Starter. All rights reserved. Designed with <i class="bi bi-heart-fill" style="color: var(--clr-primary);"></i></p>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       SCROLL TO TOP
+       ============================================ -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
