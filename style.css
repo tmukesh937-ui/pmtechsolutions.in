@@ -20,6 +20,10 @@
 }
 
 /* Global Styles */
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-black);
@@ -87,6 +91,25 @@ h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: var(--primary);
+    /* Fallback for browsers that don't support background-clip: text */
+    display: inline-block;
+}
+
+/* Fix for icons with text-gradient on mobile */
+i.text-gradient {
+    display: inline-block !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    transform: translateZ(0);
+    /* Force hardware acceleration for mobile Safari */
+    -webkit-transform: translateZ(0);
+    vertical-align: middle;
+    line-height: inherit;
+    width: auto;
+    height: auto;
 }
 
 .bg-gradient {
@@ -173,6 +196,8 @@ h6 {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
+    isolation: isolate;
+    /* Fix for background-clip: text on elements inside backdrop-filter */
 }
 
 /* Navbar */
@@ -261,27 +286,45 @@ h6 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: conic-gradient(from 0deg at 50% 50%,
-            rgba(99, 102, 241, 0.15) 0deg,
-            rgba(236, 72, 153, 0.1) 120deg,
-            rgba(168, 85, 247, 0.15) 240deg,
-            rgba(99, 102, 241, 0.15) 360deg);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 60%);
     z-index: -1;
-    filter: blur(120px);
+    filter: blur(80px);
     pointer-events: none;
-    transition: transform 0.2s ease-out;
-    animation: rotate-glow 20s linear infinite;
+    animation: mesh-morph 15s ease-in-out infinite alternate;
 }
 
-@keyframes rotate-glow {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
+@keyframes mesh-morph {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
     }
 
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
+    50% {
+        transform: translate(-45%, -55%) rotate(10deg) scale(1.1);
+        border-radius: 70% 30% 50% 50% / 30% 70% 40% 60%;
+    }
+
+    100% {
+        transform: translate(-55%, -45%) rotate(-10deg) scale(1);
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
+    }
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     }
 }
 
@@ -296,7 +339,7 @@ h6 {
     pointer-events: none;
     z-index: -1;
     transition: transform 0.1s ease-out;
-    animation: drift 20s infinite alternate ease-in-out;
+    animation: drift 20s infinite alternate ease-in-out, morph 15s infinite alternate ease-in-out;
 }
 
 .mouse-orb-secondary {
@@ -304,7 +347,7 @@ h6 {
     height: 300px;
     background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
     opacity: 0.1;
-    animation: drift 15s infinite alternate-reverse ease-in-out;
+    animation: drift 15s infinite alternate-reverse ease-in-out, morph 12s infinite alternate ease-in-out;
     animation-delay: -5s;
 }
 
@@ -426,6 +469,41 @@ h6 {
 .service-card:hover .icon-box {
     background: linear-gradient(135deg, var(--primary), var(--accent));
     transform: scale(1.1) rotate(5deg);
+}
+
+/* Workflow Stacking Cards */
+#process .card {
+    position: sticky;
+    top: 150px;
+    margin-bottom: 20px;
+    /* Space between cards when they stack */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#process .card:nth-child(1) {
+    top: 100px;
+    z-index: 1;
+}
+
+#process .card:nth-child(2) {
+    top: 130px;
+    z-index: 2;
+}
+
+#process .card:nth-child(3) {
+    top: 160px;
+    z-index: 3;
+}
+
+#process .card:nth-child(4) {
+    top: 190px;
+    z-index: 4;
+}
+
+#process .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10 !important;
 }
 
 /* Tech Stack Tabs Active Styling */
@@ -717,4 +795,113 @@ footer {
         margin-top: 15px;
         border: 1px solid var(--glass-border);
     }
+
+    /* Prevent navbar from covering hero title/badge on mobile */
+    .hero-section {
+        padding-top: 80px;
+    }
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+/* Morphing Banner Section */
+.cta-banner {
+    background-color: #050505;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.morph-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.morph-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+    animation: morph 15s infinite alternate ease-in-out, drift 25s infinite alternate ease-in-out;
+}
+
+.cta-banner .blob-1 {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    left: -100px;
+    background: var(--primary);
+}
+
+.cta-banner .blob-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    right: -100px;
+    background: var(--accent);
+    animation-delay: -5s;
+}
+
+.cta-banner .blob-3 {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    right: 20%;
+    background: var(--secondary);
+    opacity: 0.1;
+    animation-duration: 20s;
+}
+
+/* Contact & Secondary Section Blobs */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    animation: morph 12s infinite alternate ease-in-out, drift 20s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    background: var(--primary);
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    background: var(--accent);
+    animation-delay: -3s;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    right: -100px;
+    background: var(--secondary);
+}
+
+.btn-white {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: transparent;
+    color: #fff;
+    transform: translateY(-3px);
 }
