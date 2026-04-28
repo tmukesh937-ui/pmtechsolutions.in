@@ -145,7 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const orb2 = document.getElementById('orb2');
     const mainGlow = document.getElementById('mainGlow');
 
-    if (hero) {
+    // Only run mouse interactive effects on desktop
+    if (hero && window.innerWidth >= 992) {
         hero.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
             const x = clientX / window.innerWidth;
@@ -164,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
 
-    if (cursorDot && cursorOutline) {
+    if (cursorDot && cursorOutline && window.innerWidth >= 992) {
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
