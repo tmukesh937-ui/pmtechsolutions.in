@@ -125,7 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
             emailjs.sendForm('service_g4tj7ba', 'template_vdae36f', this)
                 .then(() => {
                     console.log('SUCCESS!');
-                    window.location.href = 'thank-you.html';
+                    // Fire event tracking and redirect to thank-you.html
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            'event_category': 'Contact',
+                            'event_label': 'Form Submit',
+                            'event_callback': function () {
+                                window.location.href = 'thank-you.html';
+                            }
+                        });
+                        // Fallback redirect for adblockers
+                        setTimeout(() => {
+                            if (!window.location.href.includes('thank-you.html')) {
+                                window.location.href = 'thank-you.html';
+                            }
+                        }, 1000);
+                    } else {
+                        window.location.href = 'thank-you.html';
+                    }
                 }, (error) => {
                     console.log('FAILED...', error);
                     alert("Email failed to send. Error: " + JSON.stringify(error));
