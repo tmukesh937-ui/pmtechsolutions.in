@@ -28,7 +28,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 
     <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -47,14 +47,24 @@
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B3RX4P02S"></script>
+    
     <script>
+    let gtagLoaded = false;
+    function loadGtag() {
+        if(gtagLoaded) return;
+        gtagLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6B3RX4P02S';
+        script.async = true;
+        document.head.appendChild(script);
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-6B3RX4P02S');
-    </script>
+        function windowGtag(){dataLayer.push(arguments);}
+        window.gtag = windowGtag;
+        windowGtag('js', new Date());
+        windowGtag('config', 'G-6B3RX4P02S');
+    }
+    ['scroll','mousemove','touchstart'].forEach(e => window.addEventListener(e, loadGtag, {once:true}));
+</script>
 </head>
 
 <body id="home" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
@@ -76,7 +86,7 @@
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold fs-3" href="#home" aria-label="PMTech Home">
-                <img src="assets/logo.png" alt="PMTech Logo" height="70" class="d-inline-block align-top">
+                <img src="assets/logo.png" alt="PMTech Logo" width="140" height="70" class="d-inline-block align-top" fetchpriority="high">
             </a>
 
             <!-- Mobile: Hamburger → Offcanvas (hidden on desktop) -->
@@ -90,7 +100,7 @@
                 id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width:300px; height:100dvh;">
                 <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-4">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        <img src="assets/logo.png" alt="PMTech Logo" height="50">
+                        <img src="assets/logo.png" alt="PMTech Logo" width="100" height="50" loading="lazy">
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -1013,7 +1023,7 @@
             <div class="row g-5 mb-5">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="footer-brand mb-4">
-                        <img src="assets/logo.png" alt="PMTech Logo" height="60" class="mb-3">
+                        <img src="assets/logo.png" alt="PMTech Logo" width="120" height="60" loading="lazy" class="mb-3">
                         <p class="text-secondary mt-3 pe-lg-5">We are a next-generation digital agency focused on
                             driving business growth through elite design, cutting-edge code, and data-driven marketing
                             strategies.</p>
@@ -1138,11 +1148,11 @@
     </script>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom script -->
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <!-- Promo Popup Modal -->
     <div class="modal fade" id="promoPopup" tabindex="-1" aria-labelledby="promoPopupLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -1172,6 +1182,24 @@
                 var myModal = new bootstrap.Modal(document.getElementById('promoPopup'));
                 myModal.show();
             }, 5000); // 5 seconds delay
+        });
+    </script>
+
+    <!-- Lazy load hero video -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if(window.innerWidth > 768) {
+                    var video = document.querySelector('.hero-section video');
+                    if(video) {
+                        var source = video.querySelector('source');
+                        if(source && source.dataset.src) {
+                            source.src = source.dataset.src;
+                            video.load();
+                        }
+                    }
+                }
+            }, 100);
         });
     </script>
 </body>
