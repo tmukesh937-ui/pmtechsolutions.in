@@ -19,6 +19,32 @@
     --glass-bg: rgba(255, 255, 255, 0.03);
 }
 
+/* Custom Scrollbar Design (Brand Optimized) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    border-radius: 20px;
+    border: 2px solid var(--bg-black);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--secondary), var(--accent));
+}
+
+/* Firefox Support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--bg-black);
+}
+
 /* Global Styles */
 html {
     overflow-x: hidden;
