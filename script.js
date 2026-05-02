@@ -178,36 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. Custom Cursor Animation
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
 
-    if (cursorDot && cursorOutline && window.innerWidth >= 992) {
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            // Move Dot Immediately
-            cursorDot.style.transform = `translate(${posX - 4}px, ${posY - 4}px)`;
-
-            // Smoothly move outline with slight delay for premium feel
-            setTimeout(() => {
-                cursorOutline.style.transform = `translate(${posX - 15}px, ${posY - 15}px)`;
-            }, 50);
-        });
-
-        // Add hover effects for all interactive elements
-        const targets = document.querySelectorAll('a, button, .glass-card, .portfolio-item');
-        targets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                cursorOutline.classList.add('cursor-hover');
-                cursorDot.style.transform += ' scale(1.5)';
-            });
-            target.addEventListener('mouseleave', () => {
-                cursorOutline.classList.remove('cursor-hover');
-            });
-        });
-    }
 
     // 10. Scroll-Triggered Counter Animation
     const counters = document.querySelectorAll('.counter-value');
