@@ -25,24 +25,31 @@
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="assets/favicon.webp">
 
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts: Poppins (Preloaded) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS (Critical items only OR non-blocking) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" media="print"
+        onload="this.media='all'">
 
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="assets/hero-poster.png" fetchpriority="high">
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -78,7 +85,7 @@
     </script>
 </head>
 
-<body id="home" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80" tabindex="0">
+<body id="home" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
 
     <!-- Preloader -->
     <div id="preloader">
@@ -93,7 +100,7 @@
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold fs-3" href="#home" aria-label="PMTech Home">
-                <img src="assets/logo.webp" alt="PMTech Logo" width="100%" height="70" class="d-inline-block align-top"
+                <img src="assets/logo.webp" alt="PMTech Logo" width="240" height="60" class="d-inline-block align-top"
                     fetchpriority="high">
             </a>
 
@@ -108,7 +115,7 @@
                 id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width:300px; height:100dvh;">
                 <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-4">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        <img src="assets/logo.webp" alt="PMTech Logo" width="100%" height="50" loading="lazy">
+                        <img src="assets/logo.webp" alt="PMTech Logo" width="240" height="50" loading="lazy">
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -133,15 +140,18 @@
                             data-bs-dismiss="offcanvas">Get Started</a>
                     </div>
                     <div class="mt-5 d-flex gap-3 justify-content-center">
-                        <a href="#"
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
                             class="social-icon rounded-circle d-flex align-items-center justify-content-center border border-secondary"
-                            style="width:40px;height:40px;"><i class="bi bi-facebook"></i></a>
+                            style="width:40px;height:40px;" aria-label="Follow us on Facebook"><i
+                                class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/pmtech.solutions/" target="_blank" rel="noopener noreferrer"
                             class="social-icon rounded-circle d-flex align-items-center justify-content-center border border-secondary"
-                            style="width:40px;height:40px;"><i class="bi bi-instagram"></i></a>
-                        <a href="#"
+                            style="width:40px;height:40px;" aria-label="Follow us on Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                             class="social-icon rounded-circle d-flex align-items-center justify-content-center border border-secondary"
-                            style="width:40px;height:40px;"><i class="bi bi-linkedin"></i></a>
+                            style="width:40px;height:40px;" aria-label="Connect on LinkedIn"><i
+                                class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -166,11 +176,11 @@
     <section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="hero">
 
         <!-- Video Background -->
-        <video autoplay muted loop playsinline
+        <video autoplay muted loop playsinline poster="assets/hero-poster.png"
             class="position-absolute top-50 start-50 translate-middle min-vw-100 min-vh-100 z-n2 object-fit-cover"
             style="opacity: 0.15;">
             <source
-                src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-4174-large.mp4"
+                data-src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-4174-large.mp4"
                 type="video/mp4">
         </video>
 
@@ -307,7 +317,7 @@
                         <div class="image-border-glow"></div>
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80&fm=webp"
                             alt="Team working" class="img-fluid rounded-4 shadow-lg lazyload w-100 object-fit-cover"
-                            style="min-height: 500px;" loading="lazy">
+                            style="min-height: 500px;" loading="lazy" width="800" height="1000">
                         <div
                             class="experience-badge bg-gradient p-4 rounded-4 shadow-lg text-center text-white position-absolute bottom-0 start-0 translate-middle-xy ms-4 mb-4">
                             <h2 class="display-4 fw-bold mb-0">10+</h2>
@@ -329,7 +339,7 @@
                                 class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
                                 <div class="benefit-icon me-4">
                                     <img src="assets/icons/1048953.webp" alt="Fast Delivery"
-                                        style="width: 45px; height: 45px;">
+                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
                                 </div>
                                 <div>
                                     <h5 class="text-white fw-bold mb-1">Fast Delivery</h5>
@@ -343,7 +353,7 @@
                                 class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
                                 <div class="benefit-icon me-4">
                                     <img src="assets/icons/2991148.webp" alt="SEO Friendly"
-                                        style="width: 45px; height: 45px;">
+                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
                                 </div>
                                 <div>
                                     <h5 class="text-white fw-bold mb-1">SEO Friendly</h5>
@@ -357,7 +367,7 @@
                                 class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
                                 <div class="benefit-icon me-4">
                                     <img src="assets/icons/1042211.webp" alt="100% Responsive"
-                                        style="width: 45px; height: 45px;">
+                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
                                 </div>
                                 <div>
                                     <h5 class="text-white fw-bold mb-1">100% Responsive</h5>
@@ -371,7 +381,7 @@
                                 class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
                                 <div class="benefit-icon me-4">
                                     <img src="assets/icons/2165706.webp" alt="Affordable"
-                                        style="width: 45px; height: 45px;">
+                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
                                 </div>
                                 <div>
                                     <h5 class="text-white fw-bold mb-1">Affordable</h5>
@@ -727,7 +737,8 @@
                                 class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
                                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
                                     alt="Healthcare" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;">
+                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
+                                    height="400">
                                 <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
                                     style="backdrop-filter: blur(10px);">
                                     <h4 class="text-white mb-2">Healthcare Platforms</h4>
@@ -741,7 +752,8 @@
                                 class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
                                 <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
                                     alt="Finance" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;">
+                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
+                                    height="400">
                                 <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
                                     style="backdrop-filter: blur(10px);">
                                     <h4 class="text-white mb-2">FinTech Dashboards</h4>
@@ -755,7 +767,8 @@
                                 class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
                                 <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
                                     alt="Retail" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;">
+                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
+                                    height="400">
                                 <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
                                     style="backdrop-filter: blur(10px);">
                                     <h4 class="text-white mb-2">E-Commerce Stores</h4>
@@ -809,9 +822,9 @@
                         <div class="row g-3">
                             <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp&fm=webp&fm=webp"
+                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
                                         alt="Fintech" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;">
+                                        style="height: 180px;" loading="lazy" width="600" height="400">
                                     <div class="p-2 text-center">
                                         <span class="badge bg-primary bg-opacity-25 text-primary mb-2">Fintech</span>
                                         <h6 class="text-white fw-bold mb-0">Payments</h6>
@@ -820,9 +833,9 @@
                             </div>
                             <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="200">
                                 <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp&fm=webp&fm=webp"
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
                                         alt="Development" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;">
+                                        style="height: 180px;" loading="lazy" width="600" height="400">
                                     <div class="p-2 text-center">
                                         <span class="badge bg-success bg-opacity-25 text-success mb-2">DevOps</span>
                                         <h6 class="text-white fw-bold mb-0">API Bridge</h6>
@@ -831,9 +844,9 @@
                             </div>
                             <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
                                 <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp&fm=webp&fm=webp"
+                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
                                         alt="E-commerce" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;">
+                                        style="height: 180px;" loading="lazy" width="600" height="400">
                                     <div class="p-2 text-center">
                                         <span class="badge bg-warning bg-opacity-25 text-warning mb-2">E-com</span>
                                         <h6 class="text-white fw-bold mb-0">Inventory</h6>
@@ -842,9 +855,9 @@
                             </div>
                             <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
                                 <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp&fm=webp&fm=webp"
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
                                         alt="Communication" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;">
+                                        style="height: 180px;" loading="lazy" width="600" height="400">
                                     <div class="p-2 text-center">
                                         <span class="badge bg-info bg-opacity-25 text-info mb-2">Connect</span>
                                         <h6 class="text-white fw-bold mb-0">CRM Sync</h6>
@@ -893,8 +906,8 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                            alt="Project 1" class="img-fluid w-100 lazyload" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
+                            alt="Project 1" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h4 class="text-white fw-bold mb-1">TechFin Dashboard</h4>
@@ -905,8 +918,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                            alt="Project 2" class="img-fluid w-100 lazyload" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
+                            alt="Project 2" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h4 class="text-white fw-bold mb-1">Aura E-Commerce</h4>
@@ -917,8 +930,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                            alt="Project 3" class="img-fluid w-100 lazyload" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
+                            alt="Project 3" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
                                 <h4 class="text-white fw-bold mb-1">Nexus Agency</h4>
@@ -1048,18 +1061,18 @@
                             strategies.</p>
                     </div>
                     <div class="social-links d-flex gap-3">
-                        <a href="#"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"><i
-                                class="bi bi-facebook"></i></a>
-                        <a href="#"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"><i
-                                class="bi bi-twitter-x"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
                         <a href="https://www.instagram.com/pmtech.solutions/" target="_blank" rel="noopener noreferrer"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="#"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"><i
-                                class="bi bi-linkedin"></i></a>
+                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
 

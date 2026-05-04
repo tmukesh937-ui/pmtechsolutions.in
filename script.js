@@ -10,14 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Preloader Removal
     const preloader = document.getElementById('preloader');
     const hidePreloader = () => {
-        setTimeout(() => {
-            if (preloader) {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }
-        }, 500);
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 300);
+        }
     };
 
     if (document.readyState === 'complete') {
@@ -41,24 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleNavbarState();
     window.addEventListener('scroll', toggleNavbarState);
 
-    // 4. Smooth Scrolling for Anchor links
+    // 4. Anchor links padding adjustment (if needed)
+    // Redundant smooth scroll removed - handled by CSS
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Scroll to target
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            if (targetId === '#') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
     });
