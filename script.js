@@ -192,16 +192,19 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
+                const originalText = counter.innerText;
+                const suffix = originalText.replace(/[0-9]/g, '');
+                const target = +counter.getAttribute('data-target');
+
                 const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
+                    const count = +counter.innerText.replace(/[^0-9]/g, '') || 0;
                     const inc = target / speed;
 
                     if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
+                        counter.innerText = Math.ceil(count + inc) + suffix;
                         setTimeout(updateCount, 1);
                     } else {
-                        counter.innerText = target;
+                        counter.innerText = target + suffix;
                     }
                 };
                 updateCount();

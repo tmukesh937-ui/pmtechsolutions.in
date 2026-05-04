@@ -58,8 +58,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="assets/hero-poster.png" fetchpriority="high">
+
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -125,7 +124,7 @@
                 id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width:300px; height:100dvh;">
                 <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-4">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        <img src="assets/logo.webp" alt="PMTech Logo" width="240" height="50" loading="lazy">
+                        <img src="assets/logo.webp" alt="PMTech Logo" width="220" height="50" loading="lazy">
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -186,14 +185,7 @@
         <!-- Hero Section: Cinematic Centered Design -->
         <section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="hero">
 
-            <!-- Video Background -->
-            <video autoplay muted loop playsinline poster="assets/hero-poster.png"
-                class="position-absolute top-50 start-50 translate-middle min-vw-100 min-vh-100 z-n2 object-fit-cover"
-                style="opacity: 0.15;">
-                <source
-                    data-src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-4174-large.mp4"
-                    type="video/mp4">
-            </video>
+
 
             <!-- Large Background Glow -->
             <div class="hero-glow-banner" id="mainGlow"></div>
@@ -1315,23 +1307,7 @@
         });
     </script>
 
-    <!-- Lazy load hero video -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function () {
-                if (window.innerWidth > 768) {
-                    var video = document.querySelector('.hero-section video');
-                    if (video) {
-                        var source = video.querySelector('source');
-                        if (source && source.dataset.src) {
-                            source.src = source.dataset.src;
-                            video.load();
-                        }
-                    }
-                }
-            }, 100);
-        });
-    </script>
+
 </body>
 
 </html>
