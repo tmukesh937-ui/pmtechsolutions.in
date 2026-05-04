@@ -42,7 +42,17 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" media="print"
         onload="this.media='all'">
 
-    <!-- AOS Animation CSS -->
+    <!-- AOS Animation CSS (Critical Only) -->
+    <style>
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+    </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Custom CSS -->
@@ -172,695 +182,233 @@
         </div>
     </nav>
 
-    <!-- Hero Section: Cinematic Centered Design -->
-    <section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="hero">
+    <main id="main-content">
+        <!-- Hero Section: Cinematic Centered Design -->
+        <section class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden" id="hero">
 
-        <!-- Video Background -->
-        <video autoplay muted loop playsinline poster="assets/hero-poster.png"
-            class="position-absolute top-50 start-50 translate-middle min-vw-100 min-vh-100 z-n2 object-fit-cover"
-            style="opacity: 0.15;">
-            <source
-                data-src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-4174-large.mp4"
-                type="video/mp4">
-        </video>
+            <!-- Video Background -->
+            <video autoplay muted loop playsinline poster="assets/hero-poster.png"
+                class="position-absolute top-50 start-50 translate-middle min-vw-100 min-vh-100 z-n2 object-fit-cover"
+                style="opacity: 0.15;">
+                <source
+                    data-src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-4174-large.mp4"
+                    type="video/mp4">
+            </video>
 
-        <!-- Large Background Glow -->
-        <div class="hero-glow-banner" id="mainGlow"></div>
+            <!-- Large Background Glow -->
+            <div class="hero-glow-banner" id="mainGlow"></div>
 
-        <!-- Interactive Mouse Orbs -->
-        <div class="mouse-orb" id="orb1"></div>
-        <div class="mouse-orb mouse-orb-secondary" id="orb2"></div>
+            <!-- Interactive Mouse Orbs -->
+            <div class="mouse-orb" id="orb1"></div>
+            <div class="mouse-orb mouse-orb-secondary" id="orb2"></div>
 
-        <!-- Dark Overlay -->
-        <div class="position-absolute w-100 h-100 top-0 start-0 z-n1"
-            style="background: radial-gradient(circle at center, transparent 0%, rgba(5,5,5,0.9) 100%);"></div>
+            <!-- Dark Overlay -->
+            <div class="position-absolute w-100 h-100 top-0 start-0 z-n1"
+                style="background: radial-gradient(circle at center, transparent 0%, rgba(5,5,5,0.9) 100%);"></div>
 
-        <div class="container position-relative z-1 pt-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-xl-10" data-aos="zoom-out" data-aos-duration="1500">
-                    <div class="d-inline-flex align-items-center gap-3 px-4 py-2 rounded-pill bg-glass border border-secondary mb-4 shadow-sm mx-auto position-relative overflow-hidden"
-                        style="transform: translateZ(0); -webkit-transform: translateZ(0);">
-                        <i class="bi bi-trophy-fill text-gradient fs-5 animate-bounce"></i>
-                        <span class="text-white small fw-bold tracking-wide text-uppercase">Elite Website Design
-                            Agency</span>
-                    </div>
-
-                    <h1 class="display-3 fw-bold mb-4 lh-tight text-white">
-                        <span class="text-gradient">Premium Website Design</span> <br class="d-none d-xxl-block">
-                        Engineered for High-Intent Leads
-                    </h1>
-
-                    <p class="lead text-secondary mb-5 mx-auto fs-5" style="max-width: 800px;">
-                        We don't just build websites; we engineer data-driven digital assets that dominate search
-                        rankings. Secure your spot in the
-                        <strong>Google Top 10</strong> with high-performance <strong>professional website
-                            design</strong> services.
-                    </p>
-
-                    <div class="d-flex flex-wrap justify-content-center gap-4">
-                        <a href="#contact"
-                            class="btn btn-gradient rounded-pill px-5 py-3 fw-bold shadow-lg d-flex align-items-center gap-2 transform-hover">
-                            Scale My Business <i class="bi bi-rocket-takeoff"></i>
-                        </a>
-                        <a href="#portfolio"
-                            class="btn btn-glass rounded-pill px-5 py-3 fw-bold d-flex align-items-center gap-2">
-                            Watch Strategy <i class="bi bi-play-circle-fill text-gradient"></i>
-                        </a>
-                    </div>
-
-                    <!-- Floating Stats Labels -->
-                    <div
-                        class="d-flex justify-content-center gap-4 gap-md-5 mt-5 pt-4 border-top border-secondary border-opacity-25 flex-wrap">
-                        <div class="text-center px-3">
-                            <h4 class="text-white fw-bold mb-0 counter-value" data-target="99">0</h4>
-                            <p class="text-secondary small">Success Rate %</p>
+            <div class="container position-relative z-1 pt-5">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xl-10" data-aos="zoom-out" data-aos-duration="1500">
+                        <div class="d-inline-flex align-items-center gap-3 px-4 py-2 rounded-pill bg-glass border border-secondary mb-4 shadow-sm mx-auto position-relative overflow-hidden"
+                            style="transform: translateZ(0); -webkit-transform: translateZ(0);">
+                            <i class="bi bi-trophy-fill text-gradient fs-5 animate-bounce"></i>
+                            <span class="text-white small fw-bold tracking-wide text-uppercase">Elite Website Design
+                                Agency</span>
                         </div>
-                        <div class="text-center px-3">
-                            <h4 class="text-white fw-bold mb-0 counter-value" data-target="2">0</h4>
-                            <p class="text-secondary small">Traffic Growth X</p>
-                        </div>
-                        <div class="text-center px-3">
-                            <h4 class="text-white fw-bold mb-0 counter-value" data-target="150">0</h4>
-                            <p class="text-secondary small">Elite Projects +</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-darker">
-        <div class="container">
-            <div class="text-center mb-5 pb-3" data-aos="fade-up">
-                <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Our Expertise</h6>
-                <h2 class="display-5 fw-bold text-white mb-3">Professional Web Design Services</h2>
-                <div class="w-25 mx-auto bg-gradient-line"></div>
-                <p class="text-secondary mt-3 mx-auto" style="max-width: 600px;">Bespoke digital architecture for brands
-                    demanding excellence, high conversion, and industry-leading performance.</p>
-            </div>
+                        <h1 class="display-3 fw-bold mb-4 lh-tight text-white">
+                            <span class="text-gradient">Premium Website Design</span> <br class="d-none d-xxl-block">
+                            Engineered for High-Intent Leads
+                        </h1>
 
-            <div class="row g-4">
-                <!-- Service 1 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card service-card h-100 bg-glass border-0 p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-browser-edge"></i>
+                        <p class="lead text-secondary mb-5 mx-auto fs-5" style="max-width: 800px;">
+                            We don't just build websites; we engineer data-driven digital assets that dominate search
+                            rankings. Secure your spot in the
+                            <strong>Google Top 10</strong> with high-performance <strong>professional website
+                                design</strong> services.
+                        </p>
+
+                        <div class="d-flex flex-wrap justify-content-center gap-4">
+                            <a href="#contact"
+                                class="btn btn-gradient rounded-pill px-5 py-3 fw-bold shadow-lg d-flex align-items-center gap-2 transform-hover">
+                                Scale My Business <i class="bi bi-rocket-takeoff"></i>
+                            </a>
+                            <a href="#portfolio"
+                                class="btn btn-glass rounded-pill px-5 py-3 fw-bold d-flex align-items-center gap-2">
+                                Watch Strategy <i class="bi bi-play-circle-fill text-gradient"></i>
+                            </a>
                         </div>
-                        <h4 class="text-white mb-3">Custom Website Design</h4>
-                        <p class="text-secondary mb-0">High-converting UI/UX designs crafted specifically for your brand
-                            to engage visitors and turn them into loyal customers.</p>
-                    </div>
-                </div>
-                <!-- Service 2 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card service-card h-100 bg-glass border-0 p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-gear-wide-connected"></i>
-                        </div>
-                        <h4 class="text-white mb-3">Custom Development</h4>
-                        <p class="text-secondary mb-0">Scalable full-stack engineering tailored for speed, security, and
-                            flawless user experiences across all devices.</p>
-                    </div>
-                </div>
-                <!-- Service 3 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card service-card h-100 bg-glass border-0 p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-cart4"></i>
-                        </div>
-                        <h4 class="text-white mb-3">E-Commerce Growth</h4>
-                        <p class="text-secondary mb-0">Advanced digital storefronts optimized for maximum ROI, seamless
-                            checkout flows, and simplified management.</p>
-                    </div>
-                </div>
-                <!-- Service 4 -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card service-card h-100 bg-glass border-0 p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <h4 class="text-white mb-3">Elite SEO Strategy</h4>
-                        <p class="text-secondary mb-0">Technical SEO and content authority strategies designed to secure
-                            your spot in the Google Top 10 and drive organic leads.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="section-padding border-top-dark">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <div class="position-relative ps-lg-4">
-                        <div class="image-border-glow"></div>
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80&fm=webp"
-                            alt="Team working" class="img-fluid rounded-4 shadow-lg lazyload w-100 object-fit-cover"
-                            style="min-height: 500px;" loading="lazy" width="800" height="1000">
+
+                        <!-- Floating Stats Labels -->
                         <div
-                            class="experience-badge bg-gradient p-4 rounded-4 shadow-lg text-center text-white position-absolute bottom-0 start-0 translate-middle-xy ms-4 mb-4">
-                            <h2 class="display-4 fw-bold mb-0">10+</h2>
-                            <p class="mb-0 fw-medium">Years Experience</p>
+                            class="d-flex justify-content-center gap-4 gap-md-5 mt-5 pt-4 border-top border-secondary border-opacity-25 flex-wrap">
+                            <div class="text-center px-3">
+                                <h4 class="text-white fw-bold mb-0 counter-value" data-target="99">99+</h4>
+                                <p class="text-secondary small">Success Rate %</p>
+                            </div>
+                            <div class="text-center px-3">
+                                <h4 class="text-white fw-bold mb-0 counter-value" data-target="2">2X</h4>
+                                <p class="text-secondary small">Traffic Growth</p>
+                            </div>
+                            <div class="text-center px-3">
+                                <h4 class="text-white fw-bold mb-0 counter-value" data-target="150">150+</h4>
+                                <p class="text-secondary small">Elite Projects</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Strategic Advantage</h6>
-                    <h2 class="display-5 fw-bold text-white mb-4">The Science of Conversion-Focused Web Design</h2>
-                    <p class="text-secondary mb-5">Successful online brands aren't built by accident. Every pixel, every
-                        line of code, and every call-to-action is strategically placed to ensure your <strong>website
-                            design</strong> serves as a reliable 24/7 lead generation engine.</p>
+            </div>
+        </section>
 
-                    <div class="row g-4">
-                        <!-- Fast Delivery -->
-                        <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-darker"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 500px;">
+            <div class="container">
+                <div class="text-center mb-5 pb-3" data-aos="fade-up">
+                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Our Expertise</h6>
+                    <h2 class="display-5 fw-bold text-white mb-3">Professional Web Design Services</h2>
+                    <div class="w-25 mx-auto bg-gradient-line"></div>
+                    <p class="text-secondary mt-3 mx-auto" style="max-width: 600px;">Bespoke digital architecture for
+                        brands
+                        demanding excellence, high conversion, and industry-leading performance.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Service 1 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card service-card h-100 bg-glass border-0 p-4">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-browser-edge"></i>
+                            </div>
+                            <h4 class="text-white mb-3">Custom Website Design</h4>
+                            <p class="text-secondary mb-0">High-converting UI/UX designs crafted specifically for your
+                                brand
+                                to engage visitors and turn them into loyal customers.</p>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100 bg-glass border-0 p-4">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-gear-wide-connected"></i>
+                            </div>
+                            <h4 class="text-white mb-3">Custom Development</h4>
+                            <p class="text-secondary mb-0">Scalable full-stack engineering tailored for speed, security,
+                                and
+                                flawless user experiences across all devices.</p>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100 bg-glass border-0 p-4">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-cart4"></i>
+                            </div>
+                            <h4 class="text-white mb-3">E-Commerce Growth</h4>
+                            <p class="text-secondary mb-0">Advanced digital storefronts optimized for maximum ROI,
+                                seamless
+                                checkout flows, and simplified management.</p>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100 bg-glass border-0 p-4">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h4 class="text-white mb-3">Elite SEO Strategy</h4>
+                            <p class="text-secondary mb-0">Technical SEO and content authority strategies designed to
+                                secure
+                                your spot in the Google Top 10 and drive organic leads.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="section-padding border-top-dark"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 600px;">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="position-relative ps-lg-4">
+                            <div class="image-border-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80&fm=webp"
+                                alt="Team working" class="img-fluid rounded-4 shadow-lg lazyload w-100 object-fit-cover"
+                                style="min-height: 500px;" loading="lazy" width="800" height="1000">
                             <div
-                                class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
-                                <div class="benefit-icon me-4">
-                                    <img src="assets/icons/1048953.webp" alt="Fast Delivery"
-                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
-                                </div>
-                                <div>
-                                    <h5 class="text-white fw-bold mb-1">Fast Delivery</h5>
-                                    <p class="text-secondary small mb-0">Agile workflows for rapid deployment.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- SEO Friendly -->
-                        <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                            <div
-                                class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
-                                <div class="benefit-icon me-4">
-                                    <img src="assets/icons/2991148.webp" alt="SEO Friendly"
-                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
-                                </div>
-                                <div>
-                                    <h5 class="text-white fw-bold mb-1">SEO Friendly</h5>
-                                    <p class="text-secondary small mb-0">Built strictly following SEO guidelines.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 100% Responsive -->
-                        <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                            <div
-                                class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
-                                <div class="benefit-icon me-4">
-                                    <img src="assets/icons/1042211.webp" alt="100% Responsive"
-                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
-                                </div>
-                                <div>
-                                    <h5 class="text-white fw-bold mb-1">100% Responsive</h5>
-                                    <p class="text-secondary small mb-0">Flawless experience on all devices.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Affordable -->
-                        <div class="col-sm-6" data-aos="fade-up" data-aos-delay="400">
-                            <div
-                                class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
-                                <div class="benefit-icon me-4">
-                                    <img src="assets/icons/2165706.webp" alt="Affordable"
-                                        style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
-                                </div>
-                                <div>
-                                    <h5 class="text-white fw-bold mb-1">Affordable</h5>
-                                    <p class="text-secondary small mb-0">Premium quality at competitive rates.</p>
-                                </div>
+                                class="experience-badge bg-gradient p-4 rounded-4 shadow-lg text-center text-white position-absolute bottom-0 start-0 translate-middle-xy ms-4 mb-4">
+                                <h2 class="display-4 fw-bold mb-0">10+</h2>
+                                <p class="mb-0 fw-medium">Years Experience</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Strategic Advantage</h6>
+                        <h2 class="display-5 fw-bold text-white mb-4">The Science of Conversion-Focused Web Design</h2>
+                        <p class="text-secondary mb-5">Successful online brands aren't built by accident. Every pixel,
+                            every
+                            line of code, and every call-to-action is strategically placed to ensure your
+                            <strong>website
+                                design</strong> serves as a reliable 24/7 lead generation engine.
+                        </p>
 
-    <!-- Offers / Pricing Section -->
-    <section id="offers" class="section-padding bg-darker">
-        <div class="container">
-            <div class="text-center mb-5 pb-3" data-aos="fade-up">
-                <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Investment</h6>
-                <h2 class="display-5 fw-bold text-white mb-3">Exclusive Packages</h2>
-                <div class="w-25 mx-auto bg-gradient-line"></div>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                <!-- Package 1 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card pricing-card h-100 bg-glass border-0">
-                        <div class="card-body p-5">
-                            <span class="badge bg-secondary mb-3 text-uppercase">Starter</span>
-                            <h3 class="text-white fw-bold mb-4">Basic Landing</h3>
-                            <h2 class="display-4 fw-bold text-white mb-4">$100<span
-                                    class="fs-6 text-secondary fw-normal">/project</span></h2>
-                            <ul class="list-unstyled feature-list mb-5">
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Single Page Design</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Mobile Responsive</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Contact Form Integration
-                                </li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Basic SEO</li>
-                                <li class="text-muted"><i class="bi bi-x-circle me-2"></i> E-commerce Features</li>
-                            </ul>
-                            <a href="#contact"
-                                class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold btn-glass">Choose Plan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 2 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card pricing-card featured h-100 border-0 position-relative shadow-lg">
-                        <div class="position-absolute top-0 start-50 translate-middle popular-badge">
-                            <span class="badge bg-gradient rounded-pill px-3 py-2 text-uppercase">Most Popular</span>
-                        </div>
-                        <div class="card-body p-5">
-                            <span class="badge bg-primary mb-3 text-uppercase bg-gradient-badge">Business</span>
-                            <h3 class="text-white fw-bold mb-4">Corporate Site</h3>
-                            <h2 class="display-4 fw-bold text-white mb-4">$160<span
-                                    class="fs-6 text-secondary fw-normal">/project</span></h2>
-                            <ul class="list-unstyled feature-list mb-5">
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Up to 5 Pages</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Custom UI/UX Design</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Advanced SEO setup</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> CMS Integration</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Speed Optimization</li>
-                            </ul>
-                            <a href="#contact" class="btn btn-gradient w-100 rounded-pill py-3 fw-bold shadow-lg">Choose
-                                Plan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card pricing-card h-100 bg-glass border-0">
-                        <div class="card-body p-5">
-                            <span class="badge bg-secondary mb-3 text-uppercase">Premium</span>
-                            <h3 class="text-white fw-bold mb-4">E-Commerce</h3>
-                            <h2 class="display-4 fw-bold text-white mb-4">$400<span
-                                    class="fs-6 text-secondary fw-normal">/project</span></h2>
-                            <ul class="list-unstyled feature-list mb-5">
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Unlimited Products App
-                                </li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Custom Dashboards</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Payment Gateway</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Premium SEO & Speed</li>
-                                <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> 1 Year Free Support</li>
-                            </ul>
-                            <a href="#contact"
-                                class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold btn-glass">Choose Plan</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 1 of 5: Tech Stack (Tabs) -->
-    <section class="section-padding border-top-dark" id="tech-stack">
-        <div class="container">
-            <div class="text-center mb-5 pb-3" data-aos="fade-up">
-                <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Technologies</h6>
-                <h2 class="display-5 fw-bold text-white mb-3">Our Tech Stack</h2>
-                <div class="w-25 mx-auto bg-gradient-line"></div>
-            </div>
-
-            <ul class="nav nav-pills mb-4 gap-2 justify-content-center" id="tech-tab" role="tablist" data-aos="fade-up">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active bg-glass text-white px-4 py-2 rounded-pill mx-2" id="frontend-tab"
-                        data-bs-toggle="pill" data-bs-target="#frontend" type="button" role="tab"
-                        aria-selected="true">Frontend</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-glass text-white px-4 py-2 rounded-pill mx-2 border-0" id="backend-tab"
-                        data-bs-toggle="pill" data-bs-target="#backend" type="button" role="tab"
-                        aria-selected="false">Backend</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-glass text-white px-4 py-2 rounded-pill mx-2 border-0" id="database-tab"
-                        data-bs-toggle="pill" data-bs-target="#database" type="button" role="tab"
-                        aria-selected="false">Cloud & DB</button>
-                </li>
-            </ul>
-            <div class="tab-content" id="tech-tabContent" data-aos="zoom-in">
-                <div class="tab-pane fade show active" id="frontend" role="tabpanel" tabindex="0">
-                    <div class="row g-4 text-center mt-3 justify-content-center">
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100"><i
-                                    class="bi bi-filetype-html display-4 text-orange"></i>
-                                <p class="mt-2 mb-0">HTML5</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100"><i
-                                    class="bi bi-filetype-css display-4 text-primary"></i>
-                                <p class="mt-2 mb-0">CSS3</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100"><i
-                                    class="bi bi-filetype-js display-4 text-warning"></i>
-                                <p class="mt-2 mb-0">JS/TS</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100">
-                                <h3 class="display-5 text-info fw-bold mt-2">Re</h3>
-                                <p class="mt-2 mb-0">React</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="backend" role="tabpanel" tabindex="0">
-                    <div class="row g-4 text-center mt-3 justify-content-center">
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100">
-                                <h3 class="display-5 text-success fw-bold mt-2">No</h3>
-                                <p class="mt-2 mb-0">Node.js</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100">
-                                <h3 class="display-5 text-white fw-bold mt-2">Py</h3>
-                                <p class="mt-2 mb-0">Python</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100"><i
-                                    class="bi bi-filetype-php display-4 text-primary"></i>
-                                <p class="mt-2 mb-0">PHP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="database" role="tabpanel" tabindex="0">
-                    <div class="row g-4 text-center mt-3 justify-content-center">
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100">
-                                <h3 class="display-5 text-info fw-bold mt-2">My</h3>
-                                <p class="mt-2 mb-0">MySQL</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100">
-                                <h3 class="display-5 text-success fw-bold mt-2">Mg</h3>
-                                <p class="mt-2 mb-0">MongoDB</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-2">
-                            <div class="card bg-glass border-0 p-4 h-100"><i
-                                    class="bi bi-cloud-fill display-4 text-warning"></i>
-                                <p class="mt-2 mb-0">AWS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 2 of 5: Our Process (Sticky Layout) -->
-    <section class="section-padding bg-darker overflow-visible" id="process">
-        <div class="container">
-            <div class="row g-5 align-items-start">
-                <div class="col-lg-5">
-                    <!-- Sticky container -->
-                    <div style="position: sticky; top: 120px;">
-                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Methodology</h6>
-                        <h2 class="display-5 fw-bold text-white mb-4">The Path to Dominance</h2>
-                        <p class="text-secondary mb-4">Our proprietary workflow is engineered to extract maximum value
-                            from every digital touchpoint, ensuring a seamless journey from initial concept to market
-                            leader.</p>
-                        <a href="#contact" class="btn btn-gradient rounded-pill px-4 py-2">Start Your Journey</a>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="d-flex flex-column gap-4">
-                        <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
-                            <h1
-                                class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
-                                01</h1>
-                            <h3 class="text-white mb-3"><i class="bi bi-lightbulb text-gradient me-2"></i> Strategic
-                                Discovery</h3>
-                            <p class="text-secondary mb-0">We deep-dive into your market dynamics, competitor landscape,
-                                and target audience to architect a high-growth roadmap.</p>
-                        </div>
-                        <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
-                            <h1
-                                class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
-                                02</h1>
-                            <h3 class="text-white mb-3"><i class="bi bi-vector-pen text-gradient me-2"></i> Elite
-                                Engineering</h3>
-                            <p class="text-secondary mb-0">Crafting stunning, conversion-centric UI/UX and engineering
-                                rigid, fast code designed for maximum performance.</p>
-                        </div>
-                        <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
-                            <h1
-                                class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
-                                03</h1>
-                            <h3 class="text-white mb-3"><i class="bi bi-graph-up-arrow text-gradient me-2"></i> Growth
-                                Optimization</h3>
-                            <p class="text-secondary mb-0">Implementing advanced SEO and performance tuning to ensure
-                                your brand dominates the Google search landscape.</p>
-                        </div>
-                        <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
-                            <h1
-                                class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
-                                04</h1>
-                            <h3 class="text-white mb-3"><i class="bi bi-rocket-takeoff text-gradient me-2"></i> Scaled
-                                Deployment</h3>
-                            <p class="text-secondary mb-0">Launching your high-performance asset and monitoring KPIs to
-                                ensure immediate organic lead generation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3 of 5: FAQ (Accordion) -->
-    <section class="section-padding border-top-dark" id="faq">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
-                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Elite Insights</h6>
-                    <h2 class="display-5 fw-bold text-white mb-3">Expertise Decoded</h2>
-                    <div class="w-25 mx-auto bg-gradient-line mb-4"></div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-10" data-aos="fade-up">
-                    <div class="accordion custom-accordion" id="faqAccordion">
-                        <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white fw-bold shadow-none"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    How do you guarantee Google Top 10 rankings?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-secondary border-top border-secondary">
-                                    While search algorithms evolve, our methodology relies on technical SEO excellence,
-                                    high-authority content architecture, and core web vitals optimization. We follow
-                                    Google's best practices to drive sustainable organic results.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white fw-bold shadow-none collapsed"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo">
-                                    Is organic lead generation better than paid ads?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-secondary border-top border-secondary">
-                                    Organic traffic consistently yields higher trust and long-term ROI. By building
-                                    authority, you capture the 70-80% of users who ignore paid ads and focus solely on
-                                    organic search results.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white fw-bold shadow-none collapsed"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                    aria-expanded="false" aria-controls="collapseThree">
-                                    What makes PM Tech Solutions "Elite"?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-secondary border-top border-secondary">
-                                    We go beyond basic web design. Our engineers are obsessed with performance,
-                                    conversion data, and technical SEO, ensuring your digital asset is a high-yield
-                                    investment, not just an expense.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4 of 5: Industries (Vertical Tabs + Sticky) -->
-    <section class="section-padding bg-darker overflow-visible" id="industries">
-        <div class="container">
-            <div class="row g-5 align-items-start">
-                <div class="col-lg-4" data-aos="fade-right">
-                    <div style="position: sticky; top: 120px;">
-                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Solutions</h6>
-                        <h2 class="display-5 fw-bold text-white mb-4">Industries We Serve</h2>
-                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-                            <button
-                                class="nav-link active text-start py-3 mb-2 rounded-3 text-white border border-secondary"
-                                id="v-pills-health-tab" data-bs-toggle="pill" data-bs-target="#v-pills-health"
-                                type="button" role="tab" aria-selected="true">Healthcare</button>
-                            <button class="nav-link text-start py-3 mb-2 rounded-3 text-white border border-secondary"
-                                id="v-pills-finance-tab" data-bs-toggle="pill" data-bs-target="#v-pills-finance"
-                                type="button" role="tab" aria-selected="false">Finance & Tech</button>
-                            <button class="nav-link text-start py-3 mb-2 rounded-3 text-white border border-secondary"
-                                id="v-pills-retail-tab" data-bs-toggle="pill" data-bs-target="#v-pills-retail"
-                                type="button" role="tab" aria-selected="false">Retail & E-Commerce</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-health" role="tabpanel" tabindex="0">
-                            <div
-                                class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
-                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                                    alt="Healthcare" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
-                                    height="400">
-                                <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
-                                    style="backdrop-filter: blur(10px);">
-                                    <h4 class="text-white mb-2">Healthcare Platforms</h4>
-                                    <p class="text-light mb-0">HIPAA compliant patient portals, booking systems, and
-                                        telemedicine integration.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-finance" role="tabpanel" tabindex="0">
-                            <div
-                                class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
-                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                                    alt="Finance" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
-                                    height="400">
-                                <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
-                                    style="backdrop-filter: blur(10px);">
-                                    <h4 class="text-white mb-2">FinTech Dashboards</h4>
-                                    <p class="text-light mb-0">Ultra-secure dashboards, automated reporting, and payment
-                                        gateways.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-retail" role="tabpanel" tabindex="0">
-                            <div
-                                class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
-                                <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80&fm=webp&fm=webp&fm=webp"
-                                    alt="Retail" class="img-fluid w-100"
-                                    style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy" width="800"
-                                    height="400">
-                                <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
-                                    style="backdrop-filter: blur(10px);">
-                                    <h4 class="text-white mb-2">E-Commerce Stores</h4>
-                                    <p class="text-light mb-0">Stunning digital storefronts tailored to maximize
-                                        conversion rates.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Seamless Integrations - Interactive Visual Grid -->
-    <section class="section-padding border-top-dark py-5 " id="integrations">
-        <div class="container overflow-hidden" data-aos="fade-up">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5">
-                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide mb-3">Core Connectivity</h6>
-                    <h2 class="display-5 fw-bold text-white mb-4">Seamless Integrations</h2>
-                    <p class="text-secondary mb-4 fs-5">We synchronize your digital presence with the global ecosystem
-                        of tools your business depends on. From automated payments to cloud storage and CRM
-                        synchronization, we build the bridges that power your growth.</p>
-
-                    <ul class="list-unstyled mb-5">
-                        <li class="d-flex align-items-center gap-3 text-light mb-3">
-                            <i class="bi bi-check-circle-fill text-gradient"></i> 256-bit Encrypted Transitions
-                        </li>
-                        <li class="d-flex align-items-center gap-3 text-light mb-3">
-                            <i class="bi bi-check-circle-fill text-gradient"></i> Real-time Data Synchronization
-                        </li>
-                        <li class="d-flex align-items-center gap-3 text-light">
-                            <i class="bi bi-check-circle-fill text-gradient"></i> Custom API Architecture
-                        </li>
-                    </ul>
-
-                    <a href="#contact"
-                        class="btn btn-gradient rounded-pill px-5 py-3 fw-bold shadow-lg d-flex align-items-center gap-2 transform-hover w-fit">
-                        Discuss My Ecosystem <i class="bi bi-arrow-right ms-2"></i>
-                    </a>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="position-relative">
-                        <!-- Orbiting Icons Animation Background -->
-                        <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 z-n1"
-                            style="background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 60%); filter: blur(50px);">
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                                <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
-                                        alt="Fintech" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;" loading="lazy" width="600" height="400">
-                                    <div class="p-2 text-center">
-                                        <span class="badge bg-primary bg-opacity-25 text-primary mb-2">Fintech</span>
-                                        <h6 class="text-white fw-bold mb-0">Payments</h6>
+                        <div class="row g-4">
+                            <!-- Fast Delivery -->
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                                <div
+                                    class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
+                                    <div class="benefit-icon me-4">
+                                        <img src="assets/icons/1048953.webp" alt="Fast Delivery"
+                                            style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white fw-bold mb-1">Fast Delivery</h5>
+                                        <p class="text-secondary small mb-0">Agile workflows for rapid deployment.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="200">
-                                <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
-                                        alt="Development" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;" loading="lazy" width="600" height="400">
-                                    <div class="p-2 text-center">
-                                        <span class="badge bg-success bg-opacity-25 text-success mb-2">DevOps</span>
-                                        <h6 class="text-white fw-bold mb-0">API Bridge</h6>
+                            <!-- SEO Friendly -->
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                                <div
+                                    class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
+                                    <div class="benefit-icon me-4">
+                                        <img src="assets/icons/2991148.webp" alt="SEO Friendly"
+                                            style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white fw-bold mb-1">SEO Friendly</h5>
+                                        <p class="text-secondary small mb-0">Built strictly following SEO guidelines.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
-                                <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
-                                        alt="E-commerce" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;" loading="lazy" width="600" height="400">
-                                    <div class="p-2 text-center">
-                                        <span class="badge bg-warning bg-opacity-25 text-warning mb-2">E-com</span>
-                                        <h6 class="text-white fw-bold mb-0">Inventory</h6>
+                            <!-- 100% Responsive -->
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                                <div
+                                    class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
+                                    <div class="benefit-icon me-4">
+                                        <img src="assets/icons/1042211.webp" alt="100% Responsive"
+                                            style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white fw-bold mb-1">100% Responsive</h5>
+                                        <p class="text-secondary small mb-0">Flawless experience on all devices.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-                                <div class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
-                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80&fm=webp"
-                                        alt="Communication" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
-                                        style="height: 180px;" loading="lazy" width="600" height="400">
-                                    <div class="p-2 text-center">
-                                        <span class="badge bg-info bg-opacity-25 text-info mb-2">Connect</span>
-                                        <h6 class="text-white fw-bold mb-0">CRM Sync</h6>
+                            <!-- Affordable -->
+                            <div class="col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                                <div
+                                    class="d-flex align-items-center benefit-item glass-card p-4 rounded-4 shadow-sm h-100">
+                                    <div class="benefit-icon me-4">
+                                        <img src="assets/icons/2165706.webp" alt="Affordable"
+                                            style="width: 45px; height: 45px;" loading="lazy" width="45" height="45">
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white fw-bold mb-1">Affordable</h5>
+                                        <p class="text-secondary small mb-0">Premium quality at competitive rates.</p>
                                     </div>
                                 </div>
                             </div>
@@ -868,260 +416,793 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Banner Section -->
-    <section class="cta-banner position-relative overflow-hidden py-5">
-        <div class="morph-bg-container">
-            <div class="morph-blob blob-1"></div>
-            <div class="morph-blob blob-2"></div>
-            <div class="morph-blob blob-3"></div>
-        </div>
-        <div class="container py-5 text-center position-relative z-1">
-            <div class="row justify-content-center">
-                <div class="col-lg-10" data-aos="zoom-in">
-                    <h2 class="display-3 fw-bold text-white mb-4">Launch Your Professional Website Today</h2>
-                    <p class="lead text-white opacity-75 mb-5 mx-auto fs-5" style="max-width: 800px;">
-                        Ready to dominate your industry? Partner with our <strong>top-rated web design agency</strong>
-                        and watch your search visibility soar as we secure your <strong>Google Top 10</strong> position.
-                    </p>
-                    <a href="#contact" class="btn btn-white rounded-pill px-5 py-3 fw-bold shadow-lg transform-hover">
-                        Scale My Authority <i class="bi bi-arrow-right ms-2"></i>
-                    </a>
+        <!-- Offers / Pricing Section -->
+        <section id="offers" class="section-padding bg-darker"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 700px;">
+            <div class="container">
+                <div class="text-center mb-5 pb-3" data-aos="fade-up">
+                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Investment</h6>
+                    <h2 class="display-5 fw-bold text-white mb-3">Exclusive Packages</h2>
+                    <div class="w-25 mx-auto bg-gradient-line"></div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Package 1 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card pricing-card h-100 bg-glass border-0">
+                            <div class="card-body p-5">
+                                <span class="badge bg-secondary mb-3 text-uppercase">Starter</span>
+                                <h3 class="text-white fw-bold mb-4">Basic Landing</h3>
+                                <h2 class="display-4 fw-bold text-white mb-4">$100<span
+                                        class="fs-6 text-secondary fw-normal">/project</span></h2>
+                                <ul class="list-unstyled feature-list mb-5">
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Single Page Design
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Mobile Responsive
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Contact Form
+                                        Integration
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Basic SEO</li>
+                                    <li class="text-muted"><i class="bi bi-x-circle me-2"></i> E-commerce Features</li>
+                                </ul>
+                                <a href="#contact"
+                                    class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold btn-glass">Choose
+                                    Plan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card pricing-card featured h-100 border-0 position-relative shadow-lg">
+                            <div class="position-absolute top-0 start-50 translate-middle popular-badge">
+                                <span class="badge bg-gradient rounded-pill px-3 py-2 text-uppercase">Most
+                                    Popular</span>
+                            </div>
+                            <div class="card-body p-5">
+                                <span class="badge bg-primary mb-3 text-uppercase bg-gradient-badge">Business</span>
+                                <h3 class="text-white fw-bold mb-4">Corporate Site</h3>
+                                <h2 class="display-4 fw-bold text-white mb-4">$160<span
+                                        class="fs-6 text-secondary fw-normal">/project</span></h2>
+                                <ul class="list-unstyled feature-list mb-5">
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Up to 5 Pages</li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Custom UI/UX Design
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Advanced SEO setup
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> CMS Integration</li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Speed Optimization
+                                    </li>
+                                </ul>
+                                <a href="#contact"
+                                    class="btn btn-gradient w-100 rounded-pill py-3 fw-bold shadow-lg">Choose
+                                    Plan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card pricing-card h-100 bg-glass border-0">
+                            <div class="card-body p-5">
+                                <span class="badge bg-secondary mb-3 text-uppercase">Premium</span>
+                                <h3 class="text-white fw-bold mb-4">E-Commerce</h3>
+                                <h2 class="display-4 fw-bold text-white mb-4">$400<span
+                                        class="fs-6 text-secondary fw-normal">/project</span></h2>
+                                <ul class="list-unstyled feature-list mb-5">
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Unlimited Products
+                                        App
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Custom Dashboards
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Payment Gateway</li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> Premium SEO & Speed
+                                    </li>
+                                    <li><i class="bi bi-check-circle-fill text-gradient me-2"></i> 1 Year Free Support
+                                    </li>
+                                </ul>
+                                <a href="#contact"
+                                    class="btn btn-outline-light w-100 rounded-pill py-3 fw-bold btn-glass">Choose
+                                    Plan</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section-padding border-top-dark">
-        <div class="container">
-            <div class="text-center mb-5 pb-3" data-aos="fade-up">
-                <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Our Work</h6>
-                <h2 class="display-5 fw-bold text-white mb-3">Featured Projects</h2>
-                <div class="w-25 mx-auto bg-gradient-line"></div>
+        <!-- Section 1: Tech Stack -->
+        <section class="section-padding border-top-dark" id="tech-stack"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 400px;">
+            <div class="container">
+                <div class="text-center mb-5 pb-3" data-aos="fade-up">
+                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Technologies</h6>
+                    <h2 class="display-5 fw-bold text-white mb-3">Our Tech Stack</h2>
+                    <div class="w-25 mx-auto bg-gradient-line"></div>
+                </div>
+
+                <ul class="nav nav-pills mb-4 gap-2 justify-content-center" id="tech-tab" role="tablist"
+                    data-aos="fade-up">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active bg-glass text-white px-4 py-2 rounded-pill mx-2"
+                            id="frontend-tab" data-bs-toggle="pill" data-bs-target="#frontend" type="button" role="tab"
+                            aria-selected="true">Frontend</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link bg-glass text-white px-4 py-2 rounded-pill mx-2 border-0"
+                            id="backend-tab" data-bs-toggle="pill" data-bs-target="#backend" type="button" role="tab"
+                            aria-selected="false">Backend</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link bg-glass text-white px-4 py-2 rounded-pill mx-2 border-0"
+                            id="database-tab" data-bs-toggle="pill" data-bs-target="#database" type="button" role="tab"
+                            aria-selected="false">Cloud & DB</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="tech-tabContent" data-aos="zoom-in">
+                    <div class="tab-pane fade show active" id="frontend" role="tabpanel" tabindex="0">
+                        <div class="row g-4 text-center mt-3 justify-content-center">
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100"><i
+                                        class="bi bi-filetype-html display-4 text-orange"></i>
+                                    <p class="mt-2 mb-0">HTML5</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100"><i
+                                        class="bi bi-filetype-css display-4 text-primary"></i>
+                                    <p class="mt-2 mb-0">CSS3</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100"><i
+                                        class="bi bi-filetype-js display-4 text-warning"></i>
+                                    <p class="mt-2 mb-0">JS/TS</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100">
+                                    <h3 class="display-5 text-info fw-bold mt-2">Re</h3>
+                                    <p class="mt-2 mb-0">React</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="backend" role="tabpanel" tabindex="0">
+                        <div class="row g-4 text-center mt-3 justify-content-center">
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100">
+                                    <h3 class="display-5 text-success fw-bold mt-2">No</h3>
+                                    <p class="mt-2 mb-0">Node.js</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100">
+                                    <h3 class="display-5 text-white fw-bold mt-2">Py</h3>
+                                    <p class="mt-2 mb-0">Python</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100"><i
+                                        class="bi bi-filetype-php display-4 text-primary"></i>
+                                    <p class="mt-2 mb-0">PHP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="database" role="tabpanel" tabindex="0">
+                        <div class="row g-4 text-center mt-3 justify-content-center">
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100">
+                                    <h3 class="display-5 text-info fw-bold mt-2">My</h3>
+                                    <p class="mt-2 mb-0">MySQL</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100">
+                                    <h3 class="display-5 text-success fw-bold mt-2">Mg</h3>
+                                    <p class="mt-2 mb-0">MongoDB</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="card bg-glass border-0 p-4 h-100"><i
+                                        class="bi bi-cloud-fill display-4 text-warning"></i>
+                                    <p class="mt-2 mb-0">AWS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
-                            alt="Project 1" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-content">
-                                <h4 class="text-white fw-bold mb-1">TechFin Dashboard</h4>
-                                <p class="text-secondary small mb-0">Web Application</p>
-                            </div>
+        <!-- Section 2: Our Process -->
+        <section class="section-padding bg-darker overflow-visible" id="process"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 800px;">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5">
+                        <!-- Sticky container -->
+                        <div style="position: sticky; top: 120px;">
+                            <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Methodology</h6>
+                            <h2 class="display-5 fw-bold text-white mb-4">The Path to Dominance</h2>
+                            <p class="text-secondary mb-4">Our proprietary workflow is engineered to extract maximum
+                                value
+                                from every digital touchpoint, ensuring a seamless journey from initial concept to
+                                market
+                                leader.</p>
+                            <a href="#contact" class="btn btn-gradient rounded-pill px-4 py-2">Start Your Journey</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
-                            alt="Project 2" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-content">
-                                <h4 class="text-white fw-bold mb-1">Aura E-Commerce</h4>
-                                <p class="text-secondary small mb-0">Online Store</p>
+                    <div class="col-lg-7">
+                        <div class="d-flex flex-column gap-4">
+                            <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
+                                <h1
+                                    class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
+                                    01</h1>
+                                <h3 class="text-white mb-3"><i class="bi bi-lightbulb text-gradient me-2"></i> Strategic
+                                    Discovery</h3>
+                                <p class="text-secondary mb-0">We deep-dive into your market dynamics, competitor
+                                    landscape,
+                                    and target audience to architect a high-growth roadmap.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-item rounded-4 overflow-hidden position-relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp"
-                            alt="Project 3" class="img-fluid w-100 lazyload" loading="lazy" width="800" height="500">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-content">
-                                <h4 class="text-white fw-bold mb-1">Nexus Agency</h4>
-                                <p class="text-secondary small mb-0">Corporate Website</p>
+                            <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
+                                <h1
+                                    class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
+                                    02</h1>
+                                <h3 class="text-white mb-3"><i class="bi bi-vector-pen text-gradient me-2"></i> Elite
+                                    Engineering</h3>
+                                <p class="text-secondary mb-0">Crafting stunning, conversion-centric UI/UX and
+                                    engineering
+                                    rigid, fast code designed for maximum performance.</p>
+                            </div>
+                            <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
+                                <h1
+                                    class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
+                                    03</h1>
+                                <h3 class="text-white mb-3"><i class="bi bi-graph-up-arrow text-gradient me-2"></i>
+                                    Growth
+                                    Optimization</h3>
+                                <p class="text-secondary mb-0">Implementing advanced SEO and performance tuning to
+                                    ensure
+                                    your brand dominates the Google search landscape.</p>
+                            </div>
+                            <div class="card bg-glass border-0 p-5 rounded-4 shadow-lg" data-aos="fade-up">
+                                <h1
+                                    class="display-1 text-secondary opacity-25 fw-bold position-absolute top-0 end-0 me-4 mt-3">
+                                    04</h1>
+                                <h3 class="text-white mb-3"><i class="bi bi-rocket-takeoff text-gradient me-2"></i>
+                                    Scaled
+                                    Deployment</h3>
+                                <p class="text-secondary mb-0">Launching your high-performance asset and monitoring KPIs
+                                    to
+                                    ensure immediate organic lead generation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-darker position-relative overflow-hidden">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-3"></div>
-        <div class="container position-relative z-1">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Let's Connect</h6>
-                    <h2 class="display-5 fw-bold text-white mb-4">Ready to start your project?</h2>
-                    <p class="text-secondary mb-5">Drop us a message and we'll get back to you within 24 hours. Let's
-                        build something amazing together.</p>
+        <!-- Section 3: FAQ -->
+        <section class="section-padding border-top-dark" id="faq"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 500px;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Elite Insights</h6>
+                        <h2 class="display-5 fw-bold text-white mb-3">Expertise Decoded</h2>
+                        <div class="w-25 mx-auto bg-gradient-line mb-4"></div>
+                    </div>
+                </div>
 
-                    <div class="contact-info mb-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="contact-icon bg-glass p-3 rounded-circle me-3">
-                                <i class="bi bi-envelope-fill text-gradient fs-4"></i>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10" data-aos="fade-up">
+                        <div class="accordion custom-accordion" id="faqAccordion">
+                            <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-transparent text-white fw-bold shadow-none"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        How do you guarantee Google Top 10 rankings?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-secondary border-top border-secondary">
+                                        While search algorithms evolve, our methodology relies on technical SEO
+                                        excellence,
+                                        high-authority content architecture, and core web vitals optimization. We follow
+                                        Google's best practices to drive sustainable organic results.
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h6 class="text-white mb-1">Email Us</h6>
-                                <a href="mailto:tmukesh937@gmail.com"
-                                    class="text-secondary text-decoration-none">tmukesh937@gmail.com</a>
+                            <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button bg-transparent text-white fw-bold shadow-none collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Is organic lead generation better than paid ads?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-secondary border-top border-secondary">
+                                        Organic traffic consistently yields higher trust and long-term ROI. By building
+                                        authority, you capture the 70-80% of users who ignore paid ads and focus solely
+                                        on
+                                        organic search results.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="contact-icon bg-glass p-3 rounded-circle me-3">
-                                <i class="bi bi-telephone-fill text-gradient fs-4"></i>
-                            </div>
-                            <div>
-                                <h6 class="text-white mb-1">Call Us</h6>
-                                <a href="tel:+918140816138" class="text-secondary text-decoration-none">+91
-                                    8140816138</a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="contact-icon bg-glass p-3 rounded-circle me-3">
-                                <i class="bi bi-geo-alt-fill text-gradient fs-4"></i>
-                            </div>
-                            <div>
-                                <h6 class="text-white mb-1">Location</h6>
-                                <span class="text-secondary">shaan3, new vatva gamdi road, ahmedabad - 382440</span>
+                            <div class="accordion-item bg-glass border border-secondary mb-3 rounded-3 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button bg-transparent text-white fw-bold shadow-none collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        What makes PM Tech Solutions "Elite"?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-secondary border-top border-secondary">
+                                        We go beyond basic web design. Our engineers are obsessed with performance,
+                                        conversion data, and technical SEO, ensuring your digital asset is a high-yield
+                                        investment, not just an expense.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="mt-5">
-                        <h6 class="text-white mb-3">Chat with us directly</h6>
-                        <a href="https://wa.me/918140816138" target="_blank"
-                            class="btn btn-success rounded-pill px-4 py-2 fw-medium d-inline-flex align-items-center">
-                            <i class="bi bi-whatsapp me-2 fs-5"></i> WhatsApp Chat
+        <!-- Section 4: Industries -->
+        <section class="section-padding bg-darker overflow-visible" id="industries"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 600px;">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <div style="position: sticky; top: 120px;">
+                            <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Solutions</h6>
+                            <h2 class="display-5 fw-bold text-white mb-4">Industries We Serve</h2>
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <button
+                                    class="nav-link active text-start py-3 mb-2 rounded-3 text-white border border-secondary"
+                                    id="v-pills-health-tab" data-bs-toggle="pill" data-bs-target="#v-pills-health"
+                                    type="button" role="tab" aria-selected="true">Healthcare</button>
+                                <button
+                                    class="nav-link text-start py-3 mb-2 rounded-3 text-white border border-secondary"
+                                    id="v-pills-finance-tab" data-bs-toggle="pill" data-bs-target="#v-pills-finance"
+                                    type="button" role="tab" aria-selected="false">Finance & Tech</button>
+                                <button
+                                    class="nav-link text-start py-3 mb-2 rounded-3 text-white border border-secondary"
+                                    id="v-pills-retail-tab" data-bs-toggle="pill" data-bs-target="#v-pills-retail"
+                                    type="button" role="tab" aria-selected="false">Retail & E-Commerce</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" data-aos="fade-left">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-health" role="tabpanel" tabindex="0">
+                                <div
+                                    class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&h=400&q=80&fm=webp"
+                                        alt="Healthcare" class="img-fluid w-100"
+                                        style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy"
+                                        width="800" height="400">
+                                    <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
+                                        style="backdrop-filter: blur(10px);">
+                                        <h4 class="text-white mb-2">Healthcare Platforms</h4>
+                                        <p class="text-light mb-0">HIPAA compliant patient portals, booking systems, and
+                                            telemedicine integration.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-finance" role="tabpanel" tabindex="0">
+                                <div
+                                    class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
+                                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&h=400&q=80&fm=webp"
+                                        alt="Finance" class="img-fluid w-100"
+                                        style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy"
+                                        width="800" height="400">
+                                    <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
+                                        style="backdrop-filter: blur(10px);">
+                                        <h4 class="text-white mb-2">FinTech Dashboards</h4>
+                                        <p class="text-light mb-0">Ultra-secure dashboards, automated reporting, and
+                                            payment
+                                            gateways.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-retail" role="tabpanel" tabindex="0">
+                                <div
+                                    class="card bg-glass border-0 rounded-4 overflow-hidden shadow-lg border border-secondary">
+                                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&h=400&q=80&fm=webp"
+                                        alt="Retail" class="img-fluid w-100"
+                                        style="height: 400px; object-fit: cover; opacity: 0.8;" loading="lazy"
+                                        width="800" height="400">
+                                    <div class="card-body p-4 position-absolute bottom-0 w-100 bg-dark bg-opacity-75"
+                                        style="backdrop-filter: blur(10px);">
+                                        <h4 class="text-white mb-2">E-Commerce Stores</h4>
+                                        <p class="text-light mb-0">Stunning digital storefronts tailored to maximize
+                                            conversion rates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Seamless Integrations - Interactive Visual Grid -->
+        <section class="section-padding border-top-dark py-5 " id="integrations">
+            <div class="container overflow-hidden" data-aos="fade-up">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide mb-3">Core Connectivity</h6>
+                        <h2 class="display-5 fw-bold text-white mb-4">Seamless Integrations</h2>
+                        <p class="text-secondary mb-4 fs-5">We synchronize your digital presence with the global
+                            ecosystem
+                            of tools your business depends on. From automated payments to cloud storage and CRM
+                            synchronization, we build the bridges that power your growth.</p>
+
+                        <ul class="list-unstyled mb-5">
+                            <li class="d-flex align-items-center gap-3 text-light mb-3">
+                                <i class="bi bi-check-circle-fill text-gradient"></i> 256-bit Encrypted Transitions
+                            </li>
+                            <li class="d-flex align-items-center gap-3 text-light mb-3">
+                                <i class="bi bi-check-circle-fill text-gradient"></i> Real-time Data Synchronization
+                            </li>
+                            <li class="d-flex align-items-center gap-3 text-light">
+                                <i class="bi bi-check-circle-fill text-gradient"></i> Custom API Architecture
+                            </li>
+                        </ul>
+
+                        <a href="#contact"
+                            class="btn btn-gradient rounded-pill px-5 py-3 fw-bold shadow-lg d-flex align-items-center gap-2 transform-hover w-fit">
+                            Discuss My Ecosystem <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="position-relative">
+                            <!-- Orbiting Icons Animation Background -->
+                            <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 z-n1"
+                                style="background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 60%); filter: blur(50px);">
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
+                                    <div
+                                        class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80&fm=webp"
+                                            alt="Fintech" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
+                                            style="height: 180px;" loading="lazy" width="600" height="400">
+                                        <div class="p-2 text-center">
+                                            <span
+                                                class="badge bg-primary bg-opacity-25 text-primary mb-2">Fintech</span>
+                                            <h6 class="text-white fw-bold mb-0">Payments</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="200">
+                                    <div
+                                        class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
+                                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80&fm=webp"
+                                            alt="Development" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
+                                            style="height: 180px;" loading="lazy" width="600" height="400">
+                                        <div class="p-2 text-center">
+                                            <span class="badge bg-success bg-opacity-25 text-success mb-2">DevOps</span>
+                                            <h6 class="text-white fw-bold mb-0">API Bridge</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6" data-aos="zoom-in" data-aos-delay="300">
+                                    <div
+                                        class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
+                                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80&fm=webp"
+                                            alt="E-commerce" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
+                                            style="height: 180px;" loading="lazy" width="600" height="400">
+                                        <div class="p-2 text-center">
+                                            <span class="badge bg-warning bg-opacity-25 text-warning mb-2">E-com</span>
+                                            <h6 class="text-white fw-bold mb-0">Inventory</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+                                    <div
+                                        class="glass-card p-2 rounded-4 h-100 overflow-hidden shadow-lg transform-hover">
+                                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80&fm=webp"
+                                            alt="Communication" class="img-fluid rounded-3 mb-3 w-100 object-fit-cover"
+                                            style="height: 180px;" loading="lazy" width="600" height="400">
+                                        <div class="p-2 text-center">
+                                            <span class="badge bg-info bg-opacity-25 text-info mb-2">Connect</span>
+                                            <h6 class="text-white fw-bold mb-0">CRM Sync</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="cta-banner position-relative overflow-hidden py-5">
+            <div class="morph-bg-container">
+                <div class="morph-blob blob-1"></div>
+                <div class="morph-blob blob-2"></div>
+                <div class="morph-blob blob-3"></div>
+            </div>
+            <div class="container py-5 text-center position-relative z-1">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10" data-aos="zoom-in">
+                        <h2 class="display-3 fw-bold text-white mb-4">Launch Your Professional Website Today</h2>
+                        <p class="lead text-white opacity-75 mb-5 mx-auto fs-5" style="max-width: 800px;">
+                            Ready to dominate your industry? Partner with our <strong>top-rated web design
+                                agency</strong>
+                            and watch your search visibility soar as we secure your <strong>Google Top 10</strong>
+                            position.
+                        </p>
+                        <a href="#contact"
+                            class="btn btn-white rounded-pill px-5 py-3 fw-bold shadow-lg transform-hover">
+                            Scale My Authority <i class="bi bi-arrow-right ms-2"></i>
                         </a>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="card bg-glass border-0 rounded-4 p-4 p-md-5">
-                        <h3 class="text-white fw-bold mb-4">Send us a message</h3>
-                        <form id="contactForm" class="needs-validation" novalidate>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="form-floating text-white">
-                                        <input type="text" class="form-control bg-dark border-secondary text-white"
-                                            id="name" name="name" placeholder="Name" required>
-                                        <label for="name" class="text-secondary">Your Name</label>
-                                        <div class="invalid-feedback">Please enter your name.</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-dark border-secondary text-white"
-                                            id="email" name="email" placeholder="Email" required>
-                                        <label for="email" class="text-secondary">Email Address</label>
-                                        <div class="invalid-feedback">Please enter a valid email.</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control bg-dark border-secondary text-white"
-                                            id="phone" name="phone" placeholder="Phone" pattern="[0-9]{10}" required>
-                                        <label for="phone" class="text-secondary">Mobile Number (10 Digits)</label>
-                                        <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control bg-dark border-secondary text-white" id="message"
-                                            name="message" placeholder="Message" style="height: 150px"
-                                            required></textarea>
-                                        <label for="message" class="text-secondary">Your Message</label>
-                                        <div class="invalid-feedback">Please enter your message.</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-gradient w-100 rounded-pill py-3 fw-bold fs-5">
-                                        Send Message <i class="bi bi-send-fill ms-2"></i>
-                                    </button>
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section-padding border-top-dark"
+            style="content-visibility: auto; contain-intrinsic-size: 1px 700px;">
+            <div class="container">
+                <div class="text-center mb-5 pb-3" data-aos="fade-up">
+                    <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Our Work</h6>
+                    <h2 class="display-5 fw-bold text-white mb-3">Featured Projects</h2>
+                    <div class="w-25 mx-auto bg-gradient-line"></div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80&fm=webp"
+                                alt="Project 1" class="img-fluid w-100 lazyload" loading="lazy" width="800"
+                                height="500">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h4 class="text-white fw-bold mb-1">TechFin Dashboard</h4>
+                                    <p class="text-secondary small mb-0">Web Application</p>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80&fm=webp"
+                                alt="Project 2" class="img-fluid w-100 lazyload" loading="lazy" width="800"
+                                height="500">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h4 class="text-white fw-bold mb-1">Aura E-Commerce</h4>
+                                    <p class="text-secondary small mb-0">Online Store</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="portfolio-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80&fm=webp"
+                                alt="Project 3" class="img-fluid w-100 lazyload" loading="lazy" width="800"
+                                height="500">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <h4 class="text-white fw-bold mb-1">Nexus Agency</h4>
+                                    <p class="text-secondary small mb-0">Corporate Website</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer pt-5 pb-2">
-        <div class="container overflow-hidden">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4" data-aos="fade-up">
-                    <div class="footer-brand mb-4">
-                        <img src="assets/logo.webp" alt="PMTech Logo" width="240" height="60" loading="lazy"
-                            class="mb-3">
-                        <p class="text-secondary mt-3 pe-lg-5">We are a next-generation digital agency focused on
-                            driving business growth through elite design, cutting-edge code, and data-driven marketing
-                            strategies.</p>
-                    </div>
-                    <div class="social-links d-flex gap-3">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
-                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
-                            aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/pmtech.solutions/" target="_blank" rel="noopener noreferrer"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
-                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                            class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
-                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-darker position-relative overflow-hidden">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-3"></div>
+            <div class="container position-relative z-1">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <h6 class="text-gradient fw-bold text-uppercase tracking-wide">Let's Connect</h6>
+                        <h2 class="display-5 fw-bold text-white mb-4">Ready to start your project?</h2>
+                        <p class="text-secondary mb-5">Drop us a message and we'll get back to you within 24 hours.
+                            Let's
+                            build something amazing together.</p>
 
-                <div class="col-lg-8">
-                    <div class="row g-4 justify-content-between">
-                        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-                            <h5 class="text-white fw-bold mb-4">Company</h5>
-                            <ul class="list-unstyled footer-links">
-                                <li class="mb-3"><a href="#home" class="text-secondary text-decoration-none">Our
-                                        Story</a></li>
-                                <li class="mb-3"><a href="#services"
-                                        class="text-secondary text-decoration-none">Services</a></li>
-                                <li class="mb-3"><a href="#portfolio"
-                                        class="text-secondary text-decoration-none">Success Cases</a></li>
-                                <li class="mb-3"><a href="#contact"
-                                        class="text-secondary text-decoration-none">Careers</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
-                            <h5 class="text-white fw-bold mb-4">Solutions</h5>
-                            <ul class="list-unstyled footer-links">
-                                <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">Next-Gen Web
-                                        Design</a></li>
-                                <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">E-Commerce
-                                        Growth</a></li>
-                                <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">SEO
-                                        Dominance</a></li>
-                                <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">Custom Web
-                                        Apps</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-5" data-aos="fade-up" data-aos-delay="300">
-                            <h5 class="text-white fw-bold mb-4">In Touch</h5>
-                            <ul class="list-unstyled">
-                                <li class="d-flex align-items-start gap-3 mb-4">
-                                    <i class="bi bi-geo-alt-fill text-gradient fs-5"></i>
-                                    <span class="text-secondary small">Shaan3, New Vatva Gamdi Road,<br>Ahmedabad, GJ -
-                                        382440</span>
-                                </li>
-                                <li class="d-flex align-items-center gap-3">
-                                    <i class="bi bi-envelope-at-fill text-gradient fs-5"></i>
+                        <div class="contact-info mb-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="contact-icon bg-glass p-3 rounded-circle me-3">
+                                    <i class="bi bi-envelope-fill text-gradient fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Email Us</h6>
                                     <a href="mailto:tmukesh937@gmail.com"
                                         class="text-secondary text-decoration-none">tmukesh937@gmail.com</a>
-                                </li>
-                            </ul>
-                            <!-- Newsletter -->
-                            <!-- <div class="newsletter-inline mt-4 pt-2">
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="contact-icon bg-glass p-3 rounded-circle me-3">
+                                    <i class="bi bi-telephone-fill text-gradient fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Call Us</h6>
+                                    <a href="tel:+918140816138" class="text-secondary text-decoration-none">+91
+                                        8140816138</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-glass p-3 rounded-circle me-3">
+                                    <i class="bi bi-geo-alt-fill text-gradient fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="text-white mb-1">Location</h6>
+                                    <span class="text-secondary">shaan3, new vatva gamdi road, ahmedabad - 382440</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h6 class="text-white mb-3">Chat with us directly</h6>
+                            <a href="https://wa.me/918140816138" target="_blank"
+                                class="btn btn-success rounded-pill px-4 py-2 fw-medium d-inline-flex align-items-center">
+                                <i class="bi bi-whatsapp me-2 fs-5"></i> WhatsApp Chat
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7" data-aos="fade-left">
+                        <div class="card bg-glass border-0 rounded-4 p-4 p-md-5">
+                            <h3 class="text-white fw-bold mb-4">Send us a message</h3>
+                            <form id="contactForm" class="needs-validation" novalidate>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating text-white">
+                                            <input type="text" class="form-control bg-dark border-secondary text-white"
+                                                id="name" name="name" placeholder="Name" required>
+                                            <label for="name" class="text-secondary">Your Name</label>
+                                            <div class="invalid-feedback">Please enter your name.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control bg-dark border-secondary text-white"
+                                                id="email" name="email" placeholder="Email" required>
+                                            <label for="email" class="text-secondary">Email Address</label>
+                                            <div class="invalid-feedback">Please enter a valid email.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="tel" class="form-control bg-dark border-secondary text-white"
+                                                id="phone" name="phone" placeholder="Phone" pattern="[0-9]{10}"
+                                                required>
+                                            <label for="phone" class="text-secondary">Mobile Number (10 Digits)</label>
+                                            <div class="invalid-feedback">Please enter a valid 10-digit mobile number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control bg-dark border-secondary text-white"
+                                                id="message" name="message" placeholder="Message" style="height: 150px"
+                                                required></textarea>
+                                            <label for="message" class="text-secondary">Your Message</label>
+                                            <div class="invalid-feedback">Please enter your message.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-gradient w-100 rounded-pill py-3 fw-bold fs-5">
+                                            Send Message <i class="bi bi-send-fill ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer pt-5 pb-2">
+            <div class="container overflow-hidden">
+                <div class="row g-5 mb-5">
+                    <div class="col-lg-4" data-aos="fade-up">
+                        <div class="footer-brand mb-4">
+                            <img src="assets/logo.webp" alt="PMTech Logo" width="240" height="60" loading="lazy"
+                                class="mb-3">
+                            <p class="text-secondary mt-3 pe-lg-5">We are a next-generation digital agency focused on
+                                driving business growth through elite design, cutting-edge code, and data-driven
+                                marketing
+                                strategies.</p>
+                        </div>
+                        <div class="social-links d-flex gap-3">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                                aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                                aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="https://www.instagram.com/pmtech.solutions/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon rounded-circle d-flex align-items-center justify-content-center text-decoration-none text-white"
+                                aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="row g-4 justify-content-between">
+                            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                                <h5 class="text-white fw-bold mb-4">Company</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li class="mb-3"><a href="#home" class="text-secondary text-decoration-none">Our
+                                            Story</a></li>
+                                    <li class="mb-3"><a href="#services"
+                                            class="text-secondary text-decoration-none">Services</a></li>
+                                    <li class="mb-3"><a href="#portfolio"
+                                            class="text-secondary text-decoration-none">Success Cases</a></li>
+                                    <li class="mb-3"><a href="#contact"
+                                            class="text-secondary text-decoration-none">Careers</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                                <h5 class="text-white fw-bold mb-4">Solutions</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">Next-Gen
+                                            Web
+                                            Design</a></li>
+                                    <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">E-Commerce
+                                            Growth</a></li>
+                                    <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">SEO
+                                            Dominance</a></li>
+                                    <li class="mb-3"><a href="#" class="text-secondary text-decoration-none">Custom Web
+                                            Apps</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-5" data-aos="fade-up" data-aos-delay="300">
+                                <h5 class="text-white fw-bold mb-4">In Touch</h5>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-start gap-3 mb-4">
+                                        <i class="bi bi-geo-alt-fill text-gradient fs-5"></i>
+                                        <span class="text-secondary small">Shaan3, New Vatva Gamdi Road,<br>Ahmedabad,
+                                            GJ -
+                                            382440</span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-envelope-at-fill text-gradient fs-5"></i>
+                                        <a href="mailto:tmukesh937@gmail.com"
+                                            class="text-secondary text-decoration-none">tmukesh937@gmail.com</a>
+                                    </li>
+                                </ul>
+                                <!-- Newsletter -->
+                                <!-- <div class="newsletter-inline mt-4 pt-2">
                                 <div class="input-group">
                                     <input type="email"
                                         class="form-control bg-dark border-secondary text-white rounded-start-pill py-2 ps-4"
@@ -1130,31 +1211,32 @@
                                             class="bi bi-send-fill"></i></button>
                                 </div>
                             </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="border-top border-secondary py-4 mt-2">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="text-secondary small mb-0">&copy; <span id="currentYear"></span> <span
-                                class="text-white fw-bold">PMTech Solutions</span>. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                        <div class="footer-legal d-flex justify-content-center justify-content-md-end gap-3 text-secondary"
-                            style="font-size: 13px;">
-                            <a href="#" class="text-decoration-none text-secondary transition">Terms</a>
-                            <span class="opacity-25">|</span>
-                            <a href="#" class="text-decoration-none text-secondary transition">Privacy</a>
-                            <span class="opacity-25">|</span>
-                            <a href="#" class="text-decoration-none text-secondary transition">Cookies</a>
+                <div class="border-top border-secondary py-4 mt-2">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="text-secondary small mb-0">&copy; <span id="currentYear"></span> <span
+                                    class="text-white fw-bold">PMTech Solutions</span>. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                            <div class="footer-legal d-flex justify-content-center justify-content-md-end gap-3 text-secondary"
+                                style="font-size: 13px;">
+                                <a href="#" class="text-decoration-none text-secondary transition">Terms</a>
+                                <span class="opacity-25">|</span>
+                                <a href="#" class="text-decoration-none text-secondary transition">Privacy</a>
+                                <span class="opacity-25">|</span>
+                                <a href="#" class="text-decoration-none text-secondary transition">Cookies</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </main>
 
     <!-- Floating WhatsApp Button (Mobile Only) -->
     <a href="https://wa.me/918140816138" class="whatsapp-btn d-flex d-lg-none" target="_blank" rel="noopener noreferrer"
@@ -1181,8 +1263,18 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation JS -->
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Delay non-critical libraries -->
+    <script>
+        window.addEventListener('load', function () {
+            // Load AOS JS after main content
+            const aosScript = document.createElement('script');
+            aosScript.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
+            aosScript.defer = true;
+            document.body.appendChild(aosScript);
+        });
+    </script>
+
     <!-- Custom script -->
     <script defer src="script.js"></script>
     <!-- Promo Popup Modal -->

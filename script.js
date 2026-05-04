@@ -1,10 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize AOS Animation Library
-    AOS.init({
-        once: true,
-        offset: 50,
-        duration: 800,
-        easing: 'ease-in-out-cubic',
+    // 1. Initialize AOS Animation Library (Resilient & Delayed)
+    const initAOS = () => {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                once: true,
+                offset: 30,
+                duration: 800,
+                easing: 'ease-in-out-cubic',
+                disable: window.innerWidth < 768
+            });
+        } else {
+            setTimeout(initAOS, 500); // Retry if not loaded yet
+        }
+    };
+    // Trigger initialization after window load
+    window.addEventListener('load', () => {
+        setTimeout(initAOS, 1000);
     });
 
     // 2. Preloader Removal
@@ -21,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.readyState === 'complete') {
         hidePreloader();
     } else {
-        window.addEventListener('load', hidePreloader);
+        window.addEventListener('load', hidePreloader, { once: true });
     }
 
     // 3. Navbar scroll effect
@@ -69,7 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { rootMargin: '-30% 0px -60% 0px' });
 
-    sections.forEach(section => sectionObserver.observe(section));
+    // Delay observer to save initial CPU cycles (Wait until everything is settled)
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            sections.forEach(section => sectionObserver.observe(section));
+        }, 2000);
+    });
 
     // 5. Scroll to Top Button
     const scrollTopBtn = document.getElementById('scrollTopBtn');
