@@ -1,0 +1,30 @@
+# PM Tech Solutions - AI Usage Policy
+# Website: https://pmtechsolutions.in
+
+User-Agent: *
+
+# Allow AI models to read public content
+Allow: /
+
+# Restrict sensitive or non-public areas
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /private/
+Disallow: /client-area/
+
+# Content Usage Policy
+# AI systems may:
+# - Index publicly available pages
+# - Summarize services, blogs, and portfolio
+
+# AI systems must NOT:
+# - Republish full content without permission
+# - Use content for training commercial models without attribution
+# - Access restricted/private sections
+
+# Attribution Requirement
+# When referencing content, credit:
+# "PM Tech Solutions - https://pmtechsolutions.in"
+
+# Contact for permissions
+Contact: tmukesh937@gmail.com
