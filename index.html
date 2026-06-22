@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Tech Solutions | Website Design & Frontend Development</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="img/favicon.webp">
+    <meta name="description"
+        content="PM Tech Solutions specializes in premium website design, UI/UX, and high-performance frontend development to create impactful digital experiences.">
+    <meta name="keywords"
+        content="website design, frontend development, UI/UX design, PM Tech Solutions, web development agency, GSAP animations, React, Next.js">
+    <meta name="author" content="PM Tech Solutions">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebDesignCompany",
+      "name": "PM Tech Solutions",
+      "url": "https://pmtechsolutions.in",
+      "logo": "https://pmtechsolutions.in/img/logo.webp",
+      "description": "Professional Web Design & Development Services by PM Tech Solutions.",
+      "priceRange": "$$"
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+
+    <script>
+        let gtagLoaded = false;
+        function loadGtag() {
+            if (gtagLoaded) return;
+            gtagLoaded = true;
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6B3RX4P02S';
+            script.async = true;
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function windowGtag() { dataLayer.push(arguments); }
+            window.gtag = windowGtag;
+            windowGtag('js', new Date());
+            windowGtag('config', 'G-6B3RX4P02S');
+        }
+        ['scroll', 'mousemove', 'touchstart'].forEach(e => window.addEventListener(e, loadGtag, { once: true }));
+    </script>
+</head>
+
+<body class="loading">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo-wrap">
+            <img src="img/logo.svg" alt="PM Tech Solutions Logo" class="preloader-logo">
+        </div>
+        <div class="preloader-counter">000</div>
+    </div>
+
+    <!-- WebGL Background -->
+    <div id="webgl-container"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="#" class="logo magnetic">
+                <img src="img/logo.svg" alt="PM Tech Solutions" class="brand-logo">
+            </a>
+            <button class="close-menu magnetic" aria-label="Close Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="nav-item magnetic" data-text="Home">Home</a></li>
+            <li><a href="#about" class="nav-item magnetic" data-text="About">About</a></li>
+            <li><a href="#services" class="nav-item magnetic" data-text="Services">Services</a></li>
+            <li><a href="#approach" class="nav-item magnetic" data-text="Approach">Approach</a></li>
+            <li><a href="#work" class="nav-item magnetic" data-text="Work">Work</a></li>
+            <li><a href="#faq" class="nav-item magnetic" data-text="FAQ">FAQ</a></li>
+            <li><a href="#contact" class="nav-item magnetic" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <p><a href="mailto:tmukesh937@gmail.com">tmukesh937@gmail.com</a></p>
+            <p style="margin-top: 0.5rem;"><a href="https://wa.me/918140816138" target="_blank"
+                    rel="noopener noreferrer">WhatsApp: +91 8140816138</a></p>
+        </div>
+    </nav>
+    <div class="menu-overlay"></div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo magnetic">
+                <img src="img/logo.svg" alt="PM Tech Solutions" class="brand-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home" class="magnetic">Home</a></li>
+                    <li><a href="#about" class="magnetic">About</a></li>
+                    <li><a href="#services" class="magnetic">Services</a></li>
+                    <li><a href="#work" class="magnetic">Work</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn desktop-only magnetic">Start Project</a>
+            <button class="menu-toggle magnetic" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="container hero-content">
+                    <div class="hero-titles">
+                        <h1 class="hero-title outline-text" data-speed="0.8">Frontend</h1>
+                        <h1 class="hero-title solid-text" data-speed="1.2">Development</h1>
+                        <h1 class="hero-title outline-text" data-speed="0.9">Perfected.</h1>
+                    </div>
+                    <div class="hero-bottom">
+                        <p class="hero-subtitle">We craft stunning website designs and engineer pixel-perfect,
+                            high-performance frontend interfaces that captivate and convert.</p>
+                        <a href="#work" class="btn btn-primary magnetic-btn hover-reveal">
+                            <span class="btn-text">View Projects</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse"></div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="about-split">
+                        <div class="about-title-wrap">
+                            <h2 class="section-title text-huge">Design Meets Code.</h2>
+                        </div>
+                        <div class="about-desc">
+                            <p class="reveal-text">We are PM Tech Solutions, a dedicated team of UI/UX designers and
+                                frontend engineers. We bridge the gap between aesthetics and functionality, building
+                                dynamic websites that are as beautiful as they are fast.</p>
+                            <div class="stats-bento">
+                                <div class="stat-box magnetic-subtle">
+                                    <h3 class="counter" data-target="250">0</h3>
+                                    <p>Websites Designed</p>
+                                </div>
+                                <div class="stat-box magnetic-subtle">
+                                    <h3 class="counter" data-target="100">0</h3>
+                                    <p>Perf Score Guaranteed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section (Bento Grid) -->
+            <section id="services" class="services">
+                <div class="container">
+                    <h2 class="section-title">Our Expertise.</h2>
+                    <div class="bento-grid">
+                        <div class="bento-item box-large magnetic-subtle" data-speed="0.9">
+                            <div class="bento-content">
+                                <div class="icon-wrap">01</div>
+                                <h3>Website UI/UX Design</h3>
+                                <p>We design modern, engaging, and conversion-optimized user interfaces. From
+                                    wireframing to high-fidelity prototyping, we create digital journeys that users
+                                    love.</p>
+                            </div>
+                            <div class="bento-bg"
+                                style="background: linear-gradient(135deg, var(--secondary), transparent);"></div>
+                        </div>
+                        <div class="bento-item box-small magnetic-subtle" data-speed="1.1">
+                            <div class="bento-content">
+                                <div class="icon-wrap">02</div>
+                                <h3>Frontend Engineering</h3>
+                                <p>Pixel-perfect HTML, CSS, React, and Next.js development.</p>
+                            </div>
+                        </div>
+                        <div class="bento-item box-small magnetic-subtle" data-speed="1.2">
+                            <div class="bento-content">
+                                <div class="icon-wrap">03</div>
+                                <h3>Web Animations</h3>
+                                <p>Fluid interactions using GSAP, Framer Motion, and WebGL.</p>
+                            </div>
+                        </div>
+                        <div class="bento-item box-wide magnetic-subtle" data-speed="0.85">
+                            <div class="bento-content">
+                                <div class="icon-wrap">04</div>
+                                <h3>Performance Optimization</h3>
+                                <p>We ensure blazing-fast load times, semantic accessibility, and a perfect 100/100 Core
+                                    Web Vitals score across all devices.</p>
+                            </div>
+                            <div class="bento-bg"
+                                style="background: linear-gradient(135deg, transparent, var(--primary));"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Marquee Break -->
+            <div class="marquee-giant">
+                <div class="marquee-track">
+                    <span>DESIGN / HTML / CSS / REACT / GSAP / NEXT.JS /</span>
+                    <span>DESIGN / HTML / CSS / REACT / GSAP / NEXT.JS /</span>
+                    <span>DESIGN / HTML / CSS / REACT / GSAP / NEXT.JS /</span>
+                </div>
+            </div>
+
+            <!-- Approach Section -->
+            <section id="approach" class="approach">
+                <div class="container">
+                    <h2 class="section-title">How We Build.</h2>
+                    <div class="approach-cards">
+                        <div class="approach-card sticky-card" style="top: 100px;">
+                            <div class="card-num">01.</div>
+                            <h3>Discovery & Wireframing</h3>
+                            <p>We map out the user journey, structure the content, and create low-fidelity wireframes to
+                                establish the foundation of the website design.</p>
+                        </div>
+                        <div class="approach-card sticky-card" style="top: 130px;">
+                            <div class="card-num">02.</div>
+                            <h3>UI Design & Prototyping</h3>
+                            <p>Our designers craft visually stunning interfaces in Figma, applying your brand identity
+                                to create a high-fidelity, clickable prototype.</p>
+                        </div>
+                        <div class="approach-card sticky-card" style="top: 160px;">
+                            <div class="card-num">03.</div>
+                            <h3>Frontend Development</h3>
+                            <p>We translate the design into clean, semantic code using HTML, CSS, JavaScript, and modern
+                                frameworks, injecting life through animations.</p>
+                        </div>
+                        <div class="approach-card sticky-card" style="top: 190px;">
+                            <div class="card-num">04.</div>
+                            <h3>Optimization & Launch</h3>
+                            <p>We test across all devices and browsers, optimize assets for speed, ensure SEO best
+                                practices, and deploy your seamless new website.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work Section (Horizontal Scroll) -->
+            <section id="work" class="work">
+                <div class="work-header container">
+                    <h2 class="section-title">Selected Interfaces.</h2>
+                </div>
+                <div class="horizontal-scroll-wrapper">
+                    <div class="horizontal-scroll-container">
+                        <div class="project-panel">
+                            <div class="project-image-wrap magnetic-subtle">
+                                <div class="project-img"
+                                    style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                </div>
+                            </div>
+                            <h3 class="project-title">Aura E-Commerce</h3>
+                            <p>UI Design / Frontend Dev</p>
+                        </div>
+                        <div class="project-panel">
+                            <div class="project-image-wrap magnetic-subtle">
+                                <div class="project-img"
+                                    style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                </div>
+                            </div>
+                            <h3 class="project-title">Quantum SaaS</h3>
+                            <p>React Dashboard / UX Design</p>
+                        </div>
+                        <div class="project-panel">
+                            <div class="project-image-wrap magnetic-subtle">
+                                <div class="project-img"
+                                    style="background-image: url('https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                                </div>
+                            </div>
+                            <h3 class="project-title">Nexus Studio</h3>
+                            <p>Creative Portfolio / WebGL</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq">
+                <div class="container">
+                    <div class="faq-layout">
+                        <h2 class="section-title">Common Queries</h2>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>Do you provide both design and development?</span>
+                                    <div class="icon"></div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Yes! We offer an end-to-end service. Our team handles everything from initial UX
+                                        research and Figma UI design to the final frontend code deployment.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>What frontend technologies do you use?</span>
+                                    <div class="icon"></div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>We build with modern tech stacks including plain HTML/CSS/JS for static sites,
+                                        React, Next.js, and animation libraries like GSAP and Framer Motion.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <span>Will my website be mobile-responsive?</span>
+                                    <div class="icon"></div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Absolutely. Mobile-first frontend development is standard in our workflow. We
+                                        ensure your design looks flawless on desktops, tablets, and smartphones.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="contact-box">
+                        <h2 class="huge-text">Start a Project.</h2>
+                        <form id="contactForm" class="needs-validation contact-form" novalidate>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <input type="text" id="name" name="name" placeholder=" " required>
+                                    <label for="name">Name</label>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" id="email" name="email" placeholder=" " required>
+                                    <label for="email">Email</label>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder=" "
+                                        required>
+                                    <label for="phone">Mobile Number</label>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit mobile number.
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <select id="service" name="service" required
+                                        style="width:100%; background:transparent; border:none; border-bottom:1px solid var(--surface-border); padding:1rem 0; color:var(--text-color); font-size:1.2rem; font-family:var(--font-body); outline:none;">
+                                        <option value="" disabled selected>Select Service Required</option>
+                                        <option value="ui-design" style="color:#000;">UI/UX Design Only</option>
+                                        <option value="frontend" style="color:#000;">Frontend Development Only</option>
+                                        <option value="full-package" style="color:#000;">Full Website Design &
+                                            Dev.
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select a service.</div>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-top:2rem;">
+                                <textarea id="message" name="message" placeholder=" " required></textarea>
+                                <label for="message">Project Details</label>
+                                <div class="invalid-feedback">Please enter your message.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary magnetic-btn mt-2">
+                                <span class="btn-text">Send Request</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="footer-brand">
+                            <img src="img/logo.svg" alt="PM Tech Solutions" class="brand-logo footer-logo">
+                        </div>
+                        <div class="footer-links">
+                            <div class="link-col">
+                                <h4>Socials</h4>
+                                <ul>
+                                    <li><a href="https://www.instagram.com/pmtech.solutions/" target="_blank"
+                                            rel="noopener noreferrer" class="hover-underline">Instagram</a></li>
+                                    <li><a href="#" class="hover-underline">Twitter</a></li>
+                                    <li><a href="#" class="hover-underline">LinkedIn</a></li>
+                                    <li><a href="https://wa.me/918140816138" target="_blank" rel="noopener noreferrer"
+                                            class="hover-underline">WhatsApp</a></li>
+                                </ul>
+                            </div>
+                            <div class="link-col">
+                                <h4>Services</h4>
+                                <ul>
+                                    <li><a href="#services" class="hover-underline">UI/UX Design</a></li>
+                                    <li><a href="#services" class="hover-underline">Frontend Dev</a></li>
+                                    <li><a href="#services" class="hover-underline">Web Animations</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2026 PM Tech Solutions. All rights reserved.</p>
+                        <p class="scroll-top magnetic">Back to Top &uarr;</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "77fXb6dUemogPZnkY",
+            });
+        })();
+    </script>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/918140816138" target="_blank" rel="noopener noreferrer" class="whatsapp-float magnetic" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.101.824z"/>
+        </svg>
+    </a>
+</body>
+
+</html>
