@@ -153,7 +153,27 @@ window.addEventListener('load', () => {
             opacity: 0,
             duration: 1,
             ease: 'power3.out'
-        }, "-=0.8");
+        }, "-=0.8")
+        .from('.whatsapp-float', {
+            scale: 0,
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out(1.7)"
+        }, "-=0.5")
+        .add(() => {
+            // Auto-expand WhatsApp badge after 3 seconds to get attention, then close it
+            setTimeout(() => {
+                const waFloat = document.querySelector('.whatsapp-float');
+                if (waFloat && !waFloat.matches(':hover')) {
+                    waFloat.classList.add('expanded');
+                    setTimeout(() => {
+                        if (!waFloat.matches(':hover')) {
+                            waFloat.classList.remove('expanded');
+                        }
+                    }, 3000);
+                }
+            }, 3000);
+        });
 });
 
 // --- Mobile Navigation ---
@@ -162,17 +182,40 @@ const closeMenu = document.querySelector('.close-menu');
 const mobileNav = document.querySelector('.mobile-nav');
 const menuOverlay = document.querySelector('.menu-overlay');
 
+// Prevent body scroll bleed-through when nav is open
+function blockBodyScroll(e) {
+    // Allow scroll only if the touch is inside the mobile nav
+    if (!mobileNav.contains(e.target)) {
+        e.preventDefault();
+    }
+}
+
 function openMenu() {
     mobileNav.classList.add('active');
     menuOverlay.classList.add('active');
+
+    // Pause Lenis (smooth scroll) — don't use lenis.stop() as it locks everything
     lenis.stop();
+
+    // Block background page scroll on touch devices but allow nav internal scroll
+    document.addEventListener('touchmove', blockBodyScroll, { passive: false });
 }
 
 function closeMenuFn() {
     mobileNav.classList.remove('active');
     menuOverlay.classList.remove('active');
+
+    // Re-enable Lenis smooth scroll
     lenis.start();
+
+    // Remove the touch block
+    document.removeEventListener('touchmove', blockBodyScroll);
 }
+
+// Allow native touch scroll inside the nav panel (stop propagation to Lenis)
+mobileNav.addEventListener('touchmove', (e) => {
+    e.stopPropagation();
+}, { passive: true });
 
 menuToggle.addEventListener('click', openMenu);
 closeMenu.addEventListener('click', closeMenuFn);
@@ -448,13 +491,13 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         if (!contactForm.checkValidity()) {
             e.stopPropagation();
             contactForm.classList.add('was-validated');
             return;
         }
-        
+
         contactForm.classList.add('was-validated');
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
